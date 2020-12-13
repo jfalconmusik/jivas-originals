@@ -1,0 +1,11 @@
+.blackened {
+    background-color: black;
+    color: white;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blue {
+    background-color: deepskyblue;
+}
