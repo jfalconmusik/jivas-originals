@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <meta
+      name="google-site-verification"
+      content="j8eRyqJyHRiQP1TUMpeTGSksTI-zoBr6n15ikg4C-TY"
+    />
+    <meta
+      name="google-site-verification"
+      content="ExojiKFCZGtb-mCDB5YBg-tOiDm_YNWRBYXNFtcXSVM"
+    />
+    <!-- <script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
+  <script src="bower_components/magnificent/src/js/mag-analytics.js"></script>
+  <script src="magnificent/src/js/mag.js"></script>
+  <script src="bower_components/magnificent/src/js/mag-jquery.js"></script>
+  <script src="bower_components/magnificent/src/js/mag-control.js"></script>
+  <link rel="stylesheet" href="bower_components/magnificent/src/css/mag.css" />
+  <link rel="stylesheet" href="bower_components/magnificent/src/theme/default.css" /> -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link
+      rel="icon"
+      type="image/svg"
+      href="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/logo%20rose%20finished%20cropped.png?alt=media&token=3e146253-6153-41bf-81d9-c04026411c20"
+    />
+    <link
+      type=" text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="react-inner-image-zoom/lib/InnerImageZoom/styles.css"
+    />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <!-- -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"> -->
+
+    <!-- manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+      
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+      
+    -->
+    <title>Jiva's Originals</title>
+    <script id="mcjs">
+      !(function (c, h, i, m, p) {
+        (m = c.createElement(h)),
+          (p = c.getElementsByTagName(h)[0]),
+          (m.async = 1),
+          (m.src = i),
+          p.parentNode.insertBefore(m, p);
+      })(
+        document,
+        "script",
+        "https://chimpstatic.com/mcjs-connected/js/users/5ebb78da28cafc3551163236c/466e2cdd669786bdb2dea85cf.js"
+      );
+    </script>
+  </head>
+
+  <body style="background-color: #212121; color: white">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <script src="/__/firebase/7.14.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.14.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.13.2/firebase.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <div id="root"></div>
+    <script src="js/reactjs/main.js" type="text/babel"></script>
+    <script type="text/javascript" src="/bundle.js"></script>
+    <script src="public/index.js" type="text/babel"></script>
+    <script>
+      let options = {
+        scale: 4,
+      };
+
+      new ImageZoom(document.getElementById("img-container"), options);
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="foundation.core.js"></script>
+  <script src="foundation.sticky.js"></script>
+  <script src="foundation.util.triggers.js"></script>
+  <script src="foundation.util.mediaQuery.js"></script> -->
+    <!-- Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+
+    <!-- Compressed JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery must be imported before Foundation -->
+    <script src="js/jquery.min.js"></script>
+    <!-- this will include every plugin and utility required by Foundation -->
+    <script src="js/foundation.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script> -->
+    <script src="react-responsive-carousel/lib/styles/carousel.min.css"></script>
+    <!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
+
+    <!-- Insert this within your head tag and after foundation.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css"
+    />
+    <link rel="stylesheet" href="carousel.css" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://unpkg.com/@brainhubeu/react-carousel@1.10.62-cdn/lib/react-carousel.js"
+    ></script>
+    <!-- Required Core stylesheet -->
+    <link
+      rel="stylesheet"
+      href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+
+    <!-- Optional Theme stylesheet -->
+    <link
+      rel="stylesheet"
+      href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AVENhgBSp7wyyeqD7IMAy5u-g_LJYfXXAQXardu3Saet6B7j8i37NOTVzGSxw-kti5dWzNTAls3CtJ5K"></script>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&commit=false"></script>
+
+    <!-- <script>
+  //This function displays Smart Payment Buttons on your web page.
+
+  </script> -->
+    <!-- <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script> -->
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- 
+
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+      signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+        // Leave the lines as is for the providers you want to offer your users.
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+        firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+      ],
+      // tosUrl and privacyPolicyUrl accept either url string or a callback
+      // function.
+      // Terms of service url/callback.
+      tosUrl: '<your-tos-url>',
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function () {
+          window.location.assign('<your-privacy-policy-url>');
+          }
+        };
+        
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+      </script>
+      <div id="firebaseui-auth-container"></div>
+    -->
+
+    <!--
+        <script type="text/javascript">
+          // Get URL
+      var path = window.location.pathname;
+      // Get DIV
+      var msg = document.getElementById("firebaseui-auth-container");
+      // Check if URL contains the keyword
+      if (path.search('account') > 0) {
+        // Display the message
+        msg.style.display = "block";
+      } else {
+        msg.style.display = "none"
+      }
+    </script>
+  --></body>
+</html>
