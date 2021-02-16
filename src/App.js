@@ -1494,16 +1494,22 @@ function App() {
               <Flexbox flexDirection="row">
                 <img
                   alt=""
-                  width="100vw"
-                  height="auto"
-                  src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/logo%20rose%20finished.svg?alt=media&token=0c2ae887-802c-4352-9358-74b03c1778b3"
-                  style={{ bottom: "2px" }}
+                  width="30%"
+                  height="10%"
+                  src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fjiva%20rose.png?alt=media&token=d3a1a81a-6f5d-4c5b-8aa6-e0ae18e77639"
+                  style={{
+                    bottom: "10px",
+                    marginRight: "10px",
+                    marginBottom: "5px",
+                    transform: "scale(0.55)",
+                  }}
                 ></img>
                 <h1
                   style={{
                     position: "relative",
                     // "top": "2em",
                     marginTop: ".3em",
+                    marginBottom: "22px",
                     marginRight: "-.7em",
                     marginLeft: "-.2em",
                     color: "white",
@@ -1673,10 +1679,10 @@ function App() {
                     float: "left",
                     height: "50px",
                     left: `200px`,
-                    top: ".3em",
+                    top: "1px",
                     "overflow-x": "hidden",
                     visibility: `${listItemDisplay}`,
-                    "font-size": "larger",
+                    "font-size": "xx-large",
                     position: "absolute",
                     padding: "10px",
                     paddingBottom: "15px",
@@ -1685,7 +1691,7 @@ function App() {
                   className="show-for-large"
                   id="shopId"
                 >
-                  Shop
+                  | Shop
                 </Link>
                 <ShopMenu />
               </li>
@@ -1724,7 +1730,7 @@ function App() {
                     <div
                       className="autocomplete"
                       style={{
-                        right: "12em",
+                        right: "15%",
                         bottom: "-15em",
                         float: "left",
                       }}
@@ -1735,6 +1741,7 @@ function App() {
                             style={{
                               right: "4em",
                               float: "left",
+                              width: "130%",
                             }}
                             type="text"
                             id="menuSearch2"
@@ -1756,8 +1763,9 @@ function App() {
                       ) : (
                         <input
                           style={{
-                            right: "4em",
+                            right: "15%",
                             float: "left",
+                            width: "110%",
                           }}
                           type="text"
                           id="menuSearch2"
@@ -1785,6 +1793,7 @@ function App() {
                     position: "relative",
                     display: "flex",
                     flexDirection: "column",
+                    bottom: "8px",
                   }}
                 >
                   <Link to="/account" className="li row">
@@ -1798,7 +1807,7 @@ function App() {
                   style={{
                     display: "inline",
                     "white-space": "nowrap",
-                    bottom: ".6em",
+                    bottom: "19px",
                     position: "relative",
                   }}
                 >
@@ -1806,8 +1815,8 @@ function App() {
                     alt="go to cart"
                     src={`${urlString}`}
                     id="headerCartIcon3"
-                    width="45px"
-                    height="45px"
+                    width="50px"
+                    height="50px"
                   ></img>
                 </Link>
               </span>

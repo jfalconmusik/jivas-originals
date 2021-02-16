@@ -819,7 +819,8 @@ function Skirts() {
                     </div>
                     <p
                       style={{
-                        "background-color": "#565759",
+                        "background-image":
+                          "linear-gradient(to bottom right, #cce0ff, #404963)",
                         "border-radius": "10px",
                       }}
                     >{`${item[3]}`}</p>

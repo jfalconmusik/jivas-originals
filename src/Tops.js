@@ -503,18 +503,14 @@ function Tops() {
                         {numInCart >= 1 && (
                           <p
                             style={{
-                              "background-color": "#565759",
-                              // "padding-left": ".25em",
-                              // "padding-right": ".25em",
-                              // "padding-top": ".25em",
+                              "background-image":
+                                "linear-gradient(to bottom right, #cce0ff, #404963)",
                               "border-radius": "10px",
-                              // "bottom": "1em",
                               position: "relative",
                               left: "2vw",
                               marginLeft: ".5em",
                               marginRight: `${isLargeScreen ? ".5em" : "1em"}`,
                               whiteSpace: "nowrap",
-                              // "margin-left": "1em"
                             }}
                           >
                             {numInCart} in cart
@@ -524,19 +520,11 @@ function Tops() {
                     </div>
                     <p
                       style={{
-                        "background-color": "#565759",
+                        "background-image":
+                          "linear-gradient(to bottom right, #cce0ff, #404963)",
                         "border-radius": "10px",
                       }}
                     >{`${item[3]}`}</p>
-                    {/* <p><button
-                                            type="button"
-                                            style={{ "backgroundColor": "#1779ba" }}
-                                            onClick={() => {
-                                                addToWishlist(item);
-                                                modifyWishlistCount(1);
-                                                activateAddToWishlistModal(item[0]);
-                                            }
-                                            }>{(productInWishlistArray.length > 0) ? "✔ In Wishlist" : "Add to Wishlist"}</button></p> */}
                   </div>
                 </div>
               </div>
@@ -545,18 +533,6 @@ function Tops() {
         })}
         <br></br>
       </div>
-      {/* <RecentlyViewed />
-            <br></br> */}
-      {/* <nav className="darkNav" style={{}} aria-label="You are here:" role="navigation">
-                <ul class="breadcrumbs">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/shop">Shop</Link></li>
-                    <li><Link to="/shop/tops">Tops</Link></li>
-                    <li>
-                        <span class="show-for-sr">Current: Tops</span>
-                    </li>
-                </ul>
-            </nav> */}
     </div>
   );
 }

@@ -1669,6 +1669,8 @@ function ContextProvider({ children }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [canResize, setCanResize] = useState(true);
 
+  const [homeLoaded, setHomeLoaded] = useState(0);
+
   useEffect(() => {
     if (canResize) {
       // 16:9 is the common aspect ratio
@@ -1692,7 +1694,6 @@ function ContextProvider({ children }) {
     "https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/w%20bg%20lace%20x%20top%20IMG_1340.jpg?alt=media&token=2d18f3dd-4fb6-4380-8cac-35f8c1cabcaa";
 
   const [topsPhoto, setTopsPhoto] = useState(
-    // "https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/w%20bg%20long%20sleeve%20x%20top%20IMG_1243.jpg?alt=media&token=ee4f33f6-5ca4-48a0-904c-0f4a7e5907c4"
     "https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/w%20bg%20lace%20x%20top%20IMG_1340.jpg?alt=media&token=2d18f3dd-4fb6-4380-8cac-35f8c1cabcaa"
   );
   const [beautifulDriaPhoto, setBeautifulDriaPhoto] = useState(
@@ -1774,8 +1775,6 @@ function ContextProvider({ children }) {
       }
     }
   }, [isLargeScreen]);
-
-  const [homeLoaded, setHomeLoaded] = useState(0);
 
   function incrementHome() {
     setHomeLoaded(homeLoaded + 1);

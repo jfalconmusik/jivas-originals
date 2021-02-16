@@ -402,6 +402,8 @@ function AllProducts() {
                   </div>
                   <p
                     style={{
+                      "background-image":
+                        "linear-gradient(to bottom right, #cce0ff, #404963)",
                       "background-color": "#565759",
                       "border-radius": "10px",
                     }}
@@ -580,7 +582,8 @@ function AllProducts() {
 
                   <p
                     style={{
-                      "background-color": "#565759",
+                      "background-image":
+                        "linear-gradient(to bottom right, #cce0ff, #404963)",
                       "border-radius": "10px",
                     }}
                   >{`${item[3]}`}</p>
