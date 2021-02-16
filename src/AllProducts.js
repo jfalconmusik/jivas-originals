@@ -347,7 +347,12 @@ function AllProducts() {
                     ></img>
                   </Link>
                   <Link to={`/product/${productPageLinkString}`}>
-                    <h2 class="text-decoration-none">{item[0]}</h2>
+                    <h2
+                      class="text-decoration-none"
+                      style={{ fontFamily: "Luminari" }}
+                    >
+                      {item[0]}
+                    </h2>
                   </Link>
                   <div className="row">
                     <Flexbox flexDirection="row">
@@ -530,7 +535,12 @@ function AllProducts() {
                     ></img>
                   </Link>
                   <Link to={`/product/${productPageLinkString}`}>
-                    <h2 class="text-decoration-none">{item[0]}</h2>
+                    <h2
+                      class="text-decoration-none"
+                      style={{ fontFamily: "Luminari" }}
+                    >
+                      {item[0]}
+                    </h2>
                   </Link>
                   <div className="row">
                     <Flexbox flexDirection="row">

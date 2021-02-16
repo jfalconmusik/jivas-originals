@@ -556,7 +556,7 @@ function Skirts() {
           }
         }
       >
-        <h2>Skirts</h2>
+        <h2 style={{ fontFamily: "Luminari" }}>Skirts</h2>
         <br></br>
         {displayNumber && (
           <p
@@ -764,7 +764,12 @@ function Skirts() {
                       ></img>
                     </Link>
                     <Link to={`/product/${productPageLinkString}`}>
-                      <h2 class="text-decoration-none">{item[0]}</h2>
+                      <h2
+                        class="text-decoration-none"
+                        style={{ fontFamily: "Luminari" }}
+                      >
+                        {item[0]}
+                      </h2>
                     </Link>
                     <div className="row">
                       <Flexbox flexDirection="row">

@@ -3,6 +3,7 @@ body {
   /* background-image: linear-gradient(to bottom right, #241d2b, black); */
   /* background-image: url("https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/pattern-big.jpg?alt=media&token=e71c2b94-9fda-4cd7-bfd5-c2eb727fb6d0"); */
   background-image: url("https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/pattern-13.jpg?alt=media&token=bcc0429b-905d-448c-a0f3-dbe8106febd9");
+  font-family: "Luminari";
 }
 
 .App {
@@ -14,6 +15,9 @@ body {
   /* overflow-x: hidden; */
   /* display: inline-block;
   max-width: 100vw; */
+  /* font-family: "Merienda"; */
+  font-weight: bold;
+  font-family: "Luminari";
 }
 
 .App-logo {

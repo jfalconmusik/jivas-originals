@@ -569,7 +569,12 @@ function ProductPage(props) {
             )}
             {!hasCategory && (
               <li>
-                <Link to={`/product/${productPageLinkString}`}>{item[0]}</Link>
+                <Link
+                  to={`/product/${productPageLinkString}`}
+                  style={{ fontFamily: "Luminari" }}
+                >
+                  {item[0]}
+                </Link>
               </li>
             )}
             <li>
@@ -577,7 +582,7 @@ function ProductPage(props) {
             </li>
           </ul>
         </nav>
-        <h1>{`${item[0]}`}</h1>
+        <h1 style={{ fontFamily: "Luminari" }}>{`${item[0]}`}</h1>
         <div
           className="productPage centered"
           style={{

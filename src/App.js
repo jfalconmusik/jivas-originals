@@ -1514,6 +1514,7 @@ function App() {
                     marginLeft: "-.2em",
                     color: "white",
                     textDecoration: "none",
+                    fontFamily: "Luminari",
                   }}
                 >
                   Jiva
@@ -1679,7 +1680,7 @@ function App() {
                     float: "left",
                     height: "50px",
                     left: `200px`,
-                    top: "1px",
+                    bottom: "7px",
                     "overflow-x": "hidden",
                     visibility: `${listItemDisplay}`,
                     "font-size": "xx-large",

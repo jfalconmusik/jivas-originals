@@ -226,7 +226,7 @@ function Header() {
                 margin: "0 auto",
               }}
               //   height="90px"
-              src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fheader%20background%20feb%202021.png?alt=media&token=373711ca-fd48-4ecc-97df-ccd94a5735bb"
+              src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fheader%20background%20feb%202021%20luminari.png?alt=media&token=760b19ca-16e4-4e9a-9b76-4edb5043e110"
               alt="Jiva's Originals Header"
             />
             <img

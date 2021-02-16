@@ -285,7 +285,7 @@ function Shop() {
         </ul>
       </nav>
       <div className="shadowed">
-        <h1>Shop</h1>
+        <h1 style={{ fontFamily: "Luminari" }}>Shop</h1>
         {displayNumber && (
           <p
             style={{
