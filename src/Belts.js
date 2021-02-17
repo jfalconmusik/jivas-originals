@@ -500,7 +500,7 @@ function Belts() {
                       onClick={() => {
                         handleWishlist(productInWishlistArray.length, item);
                       }}
-                      alt=""
+                      alt="heart icon"
                       id={`heartIcon${item[0]}`}
                       style={{
                         top: `${posArray[1] ? posArray[0] : emptyString}`,
@@ -525,7 +525,7 @@ function Belts() {
 
                     <Link to={`/product/${productPageLinkString}`}>
                       <img
-                        alt=""
+                        alt={`${item[0]}`}
                         style={{ visibility: "hidden" }}
                         id={`${item[0]}`}
                         width="100%"

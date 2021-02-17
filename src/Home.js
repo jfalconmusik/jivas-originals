@@ -224,7 +224,7 @@ function Home() {
         </ul>
       </nav>
       <img
-        alt=""
+        alt="carousel left"
         className="arrow"
         style={{
           padding: ".5em",
@@ -239,7 +239,7 @@ function Home() {
         onClick={() => handleCurrentIndex("back")}
       ></img>
       <img
-        alt=""
+        alt="carousel right"
         className="arrow"
         style={{
           padding: ".5em",
@@ -270,7 +270,7 @@ function Home() {
       >
         <h3 style={{ marginBottom: "-5em" }}>
           <img
-            alt=""
+            alt="girl in meadow"
             onLoad={() => {
               incrementHome();
             }}
@@ -325,7 +325,7 @@ function Home() {
           <Flexbox flexDirection="row">
             <Link to={`/shop${!isPortrait ? `/tops` : ""}`}>
               <Flexbox flexDirection="column">
-                <img alt="" className="thumbnail" src={topsPhoto} />
+                <img alt="model in top" className="thumbnail" src={topsPhoto} />
                 <button
                   type="button"
                   style={{
@@ -351,7 +351,7 @@ function Home() {
             >
               <Flexbox flexDirection="column">
                 <img
-                  alt=""
+                  alt="model in skirt"
                   className="thumbnail"
                   src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/w%20bg%20pirate%20skirt%20red%20IMG_1365.jpg?alt=media&token=95f97f8c-a1c1-41d8-98d0-9f6d1a16e3c7"
                 />
@@ -380,7 +380,7 @@ function Home() {
             >
               <Flexbox flexDirection="column">
                 <img
-                  alt=""
+                  alt="model in blue coat"
                   className="thumbnail"
                   src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/products%2Fmonarch%20blue%205.png?alt=media&token=d184e0a5-8982-47e6-9bf6-142b60bdcbb4"
                 />
@@ -406,7 +406,7 @@ function Home() {
         <h3 style={{ marginBottom: "-5em" }}>
           <Link to="/shop">
             <img
-              alt=""
+              alt="girl in meadow"
               style={{
                 width: `${!isPortrait ? "100vw" : "150vw"}`,
                 height: "auto",
@@ -467,7 +467,7 @@ function Home() {
                   className="innerBox"
                 >
                   <img
-                    alt=""
+                    alt="dress icon"
                     className="centered thumbnail"
                     width="150em"
                     height="auto"
@@ -485,7 +485,7 @@ function Home() {
                   className="innerBox"
                 >
                   <img
-                    alt=""
+                    alt="business icon"
                     className="centered thumbnail"
                     width="150em"
                     height="auto"
@@ -503,7 +503,7 @@ function Home() {
                   className="innerBox"
                 >
                   <img
-                    alt=""
+                    alt="charity icon"
                     className="centered thumbnail"
                     width="150em"
                     height="auto"
@@ -552,7 +552,7 @@ function Home() {
               <div class="media-object">
                 <div class="media-object-section">
                   <img
-                    alt=""
+                    alt="customer at fair"
                     className="thumbnail"
                     width="300em"
                     height="auto"
@@ -594,7 +594,7 @@ function Home() {
               }}
             >
               <img
-                alt=""
+                alt="jiva performing in original theatre"
                 className="thumbnail"
                 width="300em"
                 height="auto"
@@ -650,7 +650,7 @@ function Home() {
               >
                 <div class="media-object-section">
                   <img
-                    alt=""
+                    alt=" colorado renaissance faire"
                     width="100em"
                     height="auto"
                     src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
@@ -682,7 +682,7 @@ function Home() {
               >
                 <div class="media-object-section">
                   <img
-                    alt=""
+                    alt="michigan renaissance faire"
                     width="100em"
                     height="auto"
                     src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
@@ -714,7 +714,7 @@ function Home() {
               >
                 <div class="media-object-section">
                   <img
-                    alt=""
+                    alt="texas renaissance faire"
                     width="100em"
                     height="auto"
                     src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
@@ -764,7 +764,7 @@ function Home() {
                 >
                   <div>
                     <img
-                      alt=""
+                      alt="colorado renaissance faire"
                       className="thumbnail"
                       width="50vw"
                       height="auto"
@@ -797,7 +797,7 @@ function Home() {
                 >
                   <div>
                     <img
-                      alt=""
+                      alt="michigan renaissance faire"
                       className="thumbnail"
                       width="50vw"
                       height="auto"
@@ -830,7 +830,7 @@ function Home() {
                 >
                   <div>
                     <img
-                      alt=""
+                      alt="texas renaissance faire"
                       className="thumbnail"
                       width="50vw"
                       height="auto"
@@ -925,7 +925,7 @@ function Home() {
                       className="innerBox"
                     >
                       <img
-                        alt=""
+                        alt="dress icon"
                         className="centered thumbnail"
                         width="150em"
                         height="auto"
@@ -943,7 +943,7 @@ function Home() {
                       className="innerBox"
                     >
                       <img
-                        alt=""
+                        alt="business icon"
                         className="centered thumbnail"
                         width="150em"
                         height="auto"
@@ -961,7 +961,7 @@ function Home() {
                       className="innerBox"
                     >
                       <img
-                        alt=""
+                        alt="charity icon"
                         className="centered thumbnail"
                         width="150em"
                         height="auto"
@@ -991,7 +991,7 @@ function Home() {
                   <div class="media-object">
                     <div class="media-object-section">
                       <img
-                        alt=""
+                        alt="jiva performing in original theatre"
                         className="thumbnail"
                         width="300em"
                         height="auto"
@@ -1033,7 +1033,7 @@ function Home() {
                   }}
                 >
                   <img
-                    alt=""
+                    alt="jiva performing in original theatre"
                     className="thumbnail"
                     width="300em"
                     height="auto"
@@ -1089,7 +1089,7 @@ function Home() {
                   >
                     <div class="media-object-section">
                       <img
-                        alt=""
+                        alt="colorado renaissance faire"
                         width="100em"
                         height="auto"
                         src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
@@ -1121,7 +1121,7 @@ function Home() {
                   >
                     <div class="media-object-section">
                       <img
-                        alt=""
+                        alt="michigan renaissance faire"
                         width="100em"
                         height="auto"
                         src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
@@ -1153,7 +1153,7 @@ function Home() {
                   >
                     <div class="media-object-section">
                       <img
-                        alt=""
+                        alt="texas renaissance faire"
                         width="100em"
                         height="auto"
                         src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
@@ -1203,7 +1203,7 @@ function Home() {
                     >
                       <div>
                         <img
-                          alt=""
+                          alt="colorado renaissance faire"
                           className="thumbnail"
                           width="50vw"
                           height="auto"
@@ -1236,7 +1236,7 @@ function Home() {
                     >
                       <div>
                         <img
-                          alt=""
+                          alt="michigan renaissance faire"
                           className="thumbnail"
                           width="50vw"
                           height="auto"
@@ -1269,7 +1269,7 @@ function Home() {
                     >
                       <div>
                         <img
-                          alt=""
+                          alt="texas renaissance faire"
                           className="thumbnail"
                           width="50vw"
                           height="auto"

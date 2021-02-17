@@ -672,7 +672,7 @@ function ProductPage(props) {
                   >
                     <Flexbox flexDirection="column">
                       <InnerImageZoom
-                        alt=""
+                        alt={`${item[0]}`}
                         style={{ zIndex: "90", marginRight: "5em" }}
                         onLoad={() => {
                           handleContentLoader();
@@ -689,7 +689,7 @@ function ProductPage(props) {
                       >
                         {moreImages.map((i) => (
                           <img
-                            alt=""
+                            alt="item suggestion"
                             src={i}
                             height="auto"
                             width={isLargeScreen ? "75px" : "50px"}
@@ -980,7 +980,7 @@ function ProductPage(props) {
                         to={`/product/${linkString}`}
                       >
                         <img
-                          alt=""
+                          alt="item suggestion"
                           src={`${i[5]}`}
                           width={`${isLargeScreen ? "100%" : "33%"}`}
                           height="auto"

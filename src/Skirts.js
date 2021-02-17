@@ -703,7 +703,7 @@ function Skirts() {
                       </span>
                     )}
                     <img
-                      alt=""
+                      alt="heart icon"
                       onClick={() => {
                         handleWishlist(productInWishlistArray.length, item);
                       }}
@@ -731,7 +731,7 @@ function Skirts() {
 
                     <Link to={`/product/${productPageLinkString}`}>
                       <img
-                        alt=""
+                        alt={`${item[0]}`}
                         style={{ visibility: "hidden" }}
                         id={`${item[0]}`}
                         width="100%"

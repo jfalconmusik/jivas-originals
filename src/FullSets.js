@@ -410,7 +410,7 @@ function FullSets() {
                       </span>
                     )}
                     <img
-                      alt=""
+                      alt="heart button"
                       onClick={() => {
                         handleWishlist(productInWishlistArray.length, item);
                       }}
@@ -438,7 +438,7 @@ function FullSets() {
 
                     <Link to={`/product/${productPageLinkString}`}>
                       <img
-                        alt=""
+                        alt={`${item[0]}`}
                         style={{ visibility: "hidden" }}
                         id={`${item[0]}`}
                         width="100%"

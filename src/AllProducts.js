@@ -205,7 +205,7 @@ function AllProducts() {
                   id={`allProducts${item[0].toUpperCase()}`}
                 >
                   <img
-                    alt=""
+                    alt="heart icon"
                     onClick={() => {
                       handleWishlist(productInWishlistArray.length, item);
                     }}
@@ -315,7 +315,7 @@ function AllProducts() {
                     style={{ zIndex: "90" }}
                   >
                     <img
-                      alt=""
+                      alt={`${item[0]}`}
                       style={{ visibility: "hidden" }}
                       id={`${item[0]}`}
                       width="100%"
@@ -426,7 +426,7 @@ function AllProducts() {
                   id={`allProducts${item[0].toUpperCase()}`}
                 >
                   <img
-                    alt=""
+                    alt="add to wishlist button heart"
                     onClick={() => {
                       handleWishlist(productInWishlistArray.length, item);
                     }}
@@ -514,7 +514,7 @@ function AllProducts() {
                     style={{ zIndex: "90" }}
                   >
                     <img
-                      alt=""
+                      alt={`${item[0]}`}
                       style={{ visibility: "hidden" }}
                       onLoad={() => {
                         document.getElementById(`${item[0]}`).style.visibility =

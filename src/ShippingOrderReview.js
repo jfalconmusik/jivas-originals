@@ -2330,6 +2330,7 @@ function ShippingComponent() {
                             }}
                           >
                             <img
+                              alt="visa"
                               name="visa"
                               width="12%"
                               style={{ margin: ".5em" }}
@@ -2337,6 +2338,7 @@ function ShippingComponent() {
                               src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/visa.png?alt=media&token=bbe2f764-b4ad-4dca-97ce-2497988fef46"
                             />
                             <img
+                              alt="mastercard"
                               name="mc"
                               width="12%"
                               style={{ margin: ".5em" }}
@@ -2344,6 +2346,7 @@ function ShippingComponent() {
                               src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/mc.png?alt=media&token=3431d284-fc2e-4c99-ad50-aa837d7da85c"
                             />
                             <img
+                              alt="american express"
                               name="amex"
                               width="12%"
                               style={{ margin: ".5em" }}
@@ -2351,6 +2354,7 @@ function ShippingComponent() {
                               src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/amex.png?alt=media&token=f957ce2c-720d-4cc0-b67e-4bd51082d878"
                             />
                             <img
+                              alt="discover"
                               name="disc"
                               width="12%"
                               style={{ margin: ".5em" }}
@@ -2358,6 +2362,7 @@ function ShippingComponent() {
                               src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/disc.png?alt=media&token=782acf6e-58a9-4730-8d91-e87bbc6f6694"
                             />
                             <img
+                              alt="paypal"
                               name="paypal"
                               width="12%"
                               style={{ margin: ".5em" }}

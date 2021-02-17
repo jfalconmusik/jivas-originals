@@ -398,7 +398,7 @@ function Tops() {
                       </span>
                     )}
                     <img
-                      alt=""
+                      alt="heart icon"
                       onClick={() => {
                         handleWishlist(productInWishlistArray.length, item);
                       }}
@@ -423,7 +423,7 @@ function Tops() {
                     />
                     <Link to={`/product/${productPageLinkString}`}>
                       <img
-                        alt=""
+                        alt={`${item[0]}`}
                         style={{ visibility: "hidden" }}
                         id={`${item[0]}`}
                         width="100%"

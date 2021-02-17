@@ -1490,7 +1490,7 @@ function App() {
             <Link to="/" onMouseOver={() => setShowMenuHome(true)}>
               <Flexbox flexDirection="row">
                 <img
-                  alt=""
+                  alt="jiva logo rose"
                   width="40%"
                   height="10%"
                   src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fjiva%20rose.png?alt=media&token=d3a1a81a-6f5d-4c5b-8aa6-e0ae18e77639"
@@ -1539,7 +1539,7 @@ function App() {
             className="hide-for-large menu-icon"
             type="button"
           ></button>
-          <Link
+          {/* <Link
             style={{
               whiteSpace: "nowrap",
               margin: "0em",
@@ -1549,12 +1549,12 @@ function App() {
             to="/"
           >
             <img
-              alt=""
+              alt="jiva logo rose"
               width="100vw"
               height="auto"
-              src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/logo%20rose%20finished.svg?alt=media&token=d4f6fc6b-cec1-4832-adcb-440dae63563b"
+              src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fjiva%20rose.png?alt=media&token=d3a1a81a-6f5d-4c5b-8aa6-e0ae18e77639"
             ></img>
-          </Link>
+          </Link> */}
 
           <div
             className="hide-for-large"
@@ -1647,7 +1647,7 @@ function App() {
               >
                 <Link to="/cart" className="cartIcon">
                   <img
-                    alt=""
+                    alt="cart icon"
                     src={`${urlString}`}
                     style={{ minWidth: "40px" }}
                     id="headerCartIcon4"
@@ -1767,7 +1767,7 @@ function App() {
                           style={{
                             right: "15%",
                             float: "left",
-                            width: "220%",
+                            width: "200%",
                             top: "13px",
                             position: "relative",
                           }}
@@ -1798,7 +1798,7 @@ function App() {
                     display: "flex",
                     flexDirection: "column",
                     bottom: "13px",
-                    left: "240px",
+                    left: "280px",
                   }}
                 >
                   <Link to="/account" className="li row">
@@ -1821,8 +1821,8 @@ function App() {
                     alt="go to cart"
                     src={`${urlString}`}
                     id="headerCartIcon3"
-                    width="62px"
-                    height="62px"
+                    width="50px"
+                    height="50px"
                   ></img>
                 </Link>
               </span>
@@ -2063,7 +2063,7 @@ function App() {
                 type="button"
               >
                 <img
-                  alt=""
+                  alt="sidebar arrow"
                   width="32em"
                   height="auto"
                   src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/left%20arrow%20white.svg?alt=media&token=9f166f00-6ab3-4c6f-b889-64178ab8472a"

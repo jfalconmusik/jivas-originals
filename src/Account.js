@@ -422,7 +422,7 @@ function Account() {
                   >
                     <Flexbox flexDirection="row">
                       <img
-                        alt=""
+                        alt="box icon"
                         width={`${isLargeScreen ? "30%" : "20%"}`}
                         height="auto"
                         style={{
@@ -458,7 +458,7 @@ function Account() {
                 >
                   <Flexbox flexDirection="row">
                     <img
-                      alt=""
+                      alt="wishlist icon"
                       width={`${isLargeScreen ? "30%" : "20%"}`}
                       height="auto"
                       style={{
@@ -597,7 +597,7 @@ function Account() {
                     >
                       <Flexbox flexDirection="row">
                         <img
-                          alt=""
+                          alt="cart icon"
                           width={`${isLargeScreen ? "30%" : "22%"}`}
                           height="auto"
                           style={{
@@ -657,7 +657,7 @@ function Account() {
                       >
                         <Flexbox flexDirection="row">
                           <img
-                            alt=""
+                            alt="checkout bags icon"
                             width={`${isLargeScreen ? "30%" : "22%"}`}
                             height="auto"
                             style={{
@@ -701,7 +701,7 @@ function Account() {
                       >
                         <Flexbox flexDirection="row">
                           <img
-                            alt=""
+                            alt="cart icon"
                             width="30%"
                             height="auto"
                             style={{
