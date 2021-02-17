@@ -17,6 +17,7 @@ import Belts from "./Belts";
 import Flexbox from "flexbox-react";
 import ContentLoader, { Facebook } from "react-content-loader";
 import RecentlyViewed from "./RecentlyViewed";
+import Footer from "./Footer";
 // import { getClass } from "../utils"
 
 // "in cart" marker
@@ -42,12 +43,14 @@ function Shop() {
     setLoadedCount,
     setOnProductPage,
     isLargeScreen,
+    setOnHomeScreen,
   } = useContext(Context);
 
   useEffect(() => {
     setRouterString("shop");
     setOnCheckout(false);
     setOnProductPage(false);
+    setOnHomeScreen(false);
   }, []);
 
   useEffect(() => {
@@ -326,6 +329,7 @@ function Shop() {
         <br></br>
       </div>
       <br></br>
+      <Footer />
     </div>
   );
 }

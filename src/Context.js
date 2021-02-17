@@ -1862,6 +1862,7 @@ function ContextProvider({ children }) {
     };
   }, []);
 
+  const [onHomeScreen, setOnHomeScreen] = useState(false);
   ////
   return (
     <Context.Provider
@@ -2148,6 +2149,9 @@ function ContextProvider({ children }) {
         topsPhoto,
         landingPhoto,
         beautifulDriaPhoto,
+
+        onHomeScreen,
+        setOnHomeScreen,
       }}
     >
       {children}

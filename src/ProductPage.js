@@ -9,6 +9,7 @@ import AliceCarousel, { slidePrev, slideNext } from "react-alice-carousel";
 import InnerImageZoom from "react-inner-image-zoom";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import Footer from "./Footer";
 
 // to do:
 
@@ -49,6 +50,7 @@ function ProductPage(props) {
     setOnProductPage,
     setModalOpen,
     isPortrait,
+    setOnHomeScreen,
   } = useContext(Context);
 
   function handleContentLoader() {
@@ -71,6 +73,7 @@ function ProductPage(props) {
     setSearchString("");
     setTermsDisplay(false);
     setOnCheckout(false);
+    setOnHomeScreen(false);
   }, []);
 
   let item = props.item;
@@ -1021,6 +1024,7 @@ function ProductPage(props) {
             </li>
           </ul>
         </nav>
+        <Footer />
       </div>
     );
   } else {
@@ -1030,6 +1034,7 @@ function ProductPage(props) {
         <div class="text-center">
           <div class="spinner-border" role="status"></div>
         </div>
+        <Footer />
       </div>
     );
   }

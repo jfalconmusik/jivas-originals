@@ -22,6 +22,7 @@ import {
 import KeyboardedInput from "react-touch-screen-keyboard";
 import "react-touch-screen-keyboard/lib/Keyboard.css"; // if you just want css
 import FocusLock from "react-focus-lock";
+import Footer from "./Footer";
 
 function ShippingComponent() {
   // state info
@@ -73,6 +74,7 @@ function ShippingComponent() {
     setResponsiveEmail,
     canResize,
     setCanResize,
+    setOnHomeScreen,
     // applePayDevice
   } = useContext(Context);
 
@@ -83,6 +85,7 @@ function ShippingComponent() {
   const [deliverDate, setDeliverDate] = useState("");
   useEffect(() => {
     setOnProductPage(false);
+    setOnHomeScreen(false);
     // convert timestamp to milliseconds, add two weeks, make abbreviated string of Date.
     setSearchString("");
     const newDate = new Date(Date.now() + 12096e5);
@@ -2518,6 +2521,7 @@ function ShippingComponent() {
             </li>
           </ul>
         </nav>
+        <Footer />
       </div>
     );
   } else {

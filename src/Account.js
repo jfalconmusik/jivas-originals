@@ -8,6 +8,7 @@ import Wishlist from "./Wishlist";
 import { jquery } from "jquery";
 import Flexbox from "flexbox-react";
 import RecentlyViewed from "./RecentlyViewed";
+import Footer from "./Footer";
 // import { updateStaySignedIn } from "../functions"
 
 function Account() {
@@ -50,12 +51,14 @@ function Account() {
     setOnProductPage,
     isPortrait,
     isSmallScreen,
+    setOnHomeScreen,
   } = useContext(Context);
 
   useEffect(() => {
     setOnCheckout(false);
     setUseExpressMode(false);
     setOnProductPage(false);
+    setOnHomeScreen(false);
   }, []);
 
   function toggleStaySignedIn() {
@@ -920,6 +923,7 @@ function Account() {
             </li>
           </ul>
         </nav>
+        <Footer />
       </div>
     );
   }

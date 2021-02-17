@@ -24,6 +24,7 @@ import AliceCarousel, { slidePrev, slideNext } from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Flexbox from "flexbox-react";
 import RecentlyViewed from "./RecentlyViewed";
+import Footer from "./Footer";
 // import TouchCarousel from 'react-touch-carousel'
 
 function Home() {
@@ -57,6 +58,7 @@ function Home() {
     setTopsPhoto,
     setBeautifulDriaPhoto,
     setLandingPhoto,
+    setOnHomeScreen,
   } = useContext(Context);
 
   useEffect(() => {
@@ -65,6 +67,7 @@ function Home() {
     setRouterString("home");
     setOnCheckout(false);
     setOnProductPage(false);
+    setOnHomeScreen(true);
 
     document.getElementById("firebaseui-auth-container").style.display = "none";
   }, []);
@@ -888,6 +891,7 @@ function Home() {
           </li>
         </ul>
       </nav>
+      <Footer />
     </div>
   );
 }

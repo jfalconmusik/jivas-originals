@@ -109,6 +109,7 @@ function App() {
     isSmallScreen,
     isPortrait,
     isBigScreen,
+    onHomeScreen,
   } = useContext(Context);
 
   const [selected, setSelected] = useState([]);
@@ -1433,7 +1434,7 @@ function App() {
           top: "0em",
           position: "sticky",
           "overflow-x": "visible",
-          transition: "value .5s",
+          transition: "value .7s",
         }}
       ></progress>
       <TopBar
@@ -1494,7 +1495,7 @@ function App() {
               <Flexbox flexDirection="row">
                 <img
                   alt=""
-                  width="30%"
+                  width="40%"
                   height="10%"
                   src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fjiva%20rose.png?alt=media&token=d3a1a81a-6f5d-4c5b-8aa6-e0ae18e77639"
                   style={{
@@ -2212,155 +2213,129 @@ function App() {
           No
         </button>
       </div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/blog">
-          <Blog />
-        </Route>
-        <Route path="/checkout">
-          <ShippingComponent />
-        </Route>
-        <Route path="/express-checkout">
-          <Elements stripe={stripePromise}>
-            <ExpressCheckout />
-          </Elements>
-        </Route>
-        <Route exact path="/shop">
-          <Shop />
-        </Route>
-        <Route path="/shop/full-sets">
-          <FullSets />
-        </Route>
-        <Route path="/shop/tops">
-          <Tops />
-        </Route>
-        <Route path="/shop/skirts">
-          <Skirts />
-        </Route>
-        <Route path="/shop/belts">
-          <Belts />
-        </Route>
-        {allProducts.map((product) => {
-          let productPageLinkString = product[0].split(" ").join("-");
-          return (
-            <Route path={`/product/${productPageLinkString}`}>
-              <ProductPage item={product} />
-            </Route>
-          );
-        })}
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="cart-sign-in">
-          <CartSignIn />
-        </Route>
-        <Route path="/account">
-          <Account />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/sign-in-successful">
-          <SignInSuccessful />
-        </Route>
-        <Route path="/privacy-policy">
-          <PrivacyPolicy />
-        </Route>
-        <Route path="/terms-of-service">
-          <TermsOfService />
-        </Route>
-        <Route path="/sign-in-success-email">
-          <SignInSuccessEmail />
-        </Route>
-        <Route path="/sign-in-with-email">
-          <SignInWithEmail />
-        </Route>
-        <Route path="/order-success">
-          <OrderSuccess />
-        </Route>
-        <Route path="/my-orders">
-          <MyOrders />
-        </Route>
-        <Route path="/favorites">
-          <Favorites />
-        </Route>
-        <Route path="/return-policy">
-          <ReturnPolicy />
-        </Route>
-      </Switch>
-
       <div
-        id="firebaseui-auth-container"
-        style={{
-          zIndex: "86",
-          marginTop: "-.5em",
-          position: "relative",
-          bottom: "1.2em",
-        }}
+        className="backgroundElement"
+        style={{ display: `${onHomeScreen ? "" : "none"}` }}
       ></div>
-      <div>
-        {termsDisplay && (
-          <div>
-            <PrivacyAndTermsAgreement />
-            {wishlistTempCache.length > 0 && (
-              <h4
-                style={{
-                  position: "relative",
-                  // "background-color": "#565759",
-                  backgroundImage:
-                    "linear-gradient(to bottom right, #241d2b, black)",
-                  padding: ".25em",
-                  "border-radius": "13px",
-                  width: `${isLargeScreen ? "30%" : "90%"}`,
-                  left: `${isLargeScreen ? "35vw" : "5vw"}`,
-                }}
-                classsName="grayblock centered"
-              >
-                Sign in to see your Favorites
-              </h4>
-            )}
-            <RecentlyViewed />
-          </div>
-        )}
-      </div>
-      <br></br>
-      <nav className="footer">
-        <h2
+      <div className="baseElement" style={{ top: "200px" }}>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/blog">
+            <Blog />
+          </Route>
+          <Route path="/checkout">
+            <ShippingComponent />
+          </Route>
+          <Route path="/express-checkout">
+            <Elements stripe={stripePromise}>
+              <ExpressCheckout />
+            </Elements>
+          </Route>
+          <Route exact path="/shop">
+            <Shop />
+          </Route>
+          <Route path="/shop/full-sets">
+            <FullSets />
+          </Route>
+          <Route path="/shop/tops">
+            <Tops />
+          </Route>
+          <Route path="/shop/skirts">
+            <Skirts />
+          </Route>
+          <Route path="/shop/belts">
+            <Belts />
+          </Route>
+          {allProducts.map((product) => {
+            let productPageLinkString = product[0].split(" ").join("-");
+            return (
+              <Route path={`/product/${productPageLinkString}`}>
+                <ProductPage item={product} />
+              </Route>
+            );
+          })}
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+          <Route path="cart-sign-in">
+            <CartSignIn />
+          </Route>
+          <Route path="/account">
+            <Account />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/sign-in-successful">
+            <SignInSuccessful />
+          </Route>
+          <Route path="/privacy-policy">
+            <PrivacyPolicy />
+          </Route>
+          <Route path="/terms-of-service">
+            <TermsOfService />
+          </Route>
+          <Route path="/sign-in-success-email">
+            <SignInSuccessEmail />
+          </Route>
+          <Route path="/sign-in-with-email">
+            <SignInWithEmail />
+          </Route>
+          <Route path="/order-success">
+            <OrderSuccess />
+          </Route>
+          <Route path="/my-orders">
+            <MyOrders />
+          </Route>
+          <Route path="/favorites">
+            <Favorites />
+          </Route>
+          <Route path="/return-policy">
+            <ReturnPolicy />
+          </Route>
+        </Switch>
+
+        <div
+          id="firebaseui-auth-container"
           style={{
+            zIndex: "86",
+            marginTop: "-.5em",
             position: "relative",
-            top: ".5em",
-            left: ".25em",
+            bottom: "1.2em",
           }}
-          className="footItem"
-        >
-          <Link to="/privacy-policy" className="li">
-            Privacy Policy
-          </Link>
-        </h2>
-        <h2 className="footItem">
-          <Link to="/terms-of-service" className="li">
-            Terms of Service
-          </Link>
-        </h2>
-        <h2 className="footItem">
-          <Link to="/contact" className="li">
-            Contact Us
-          </Link>
-        </h2>
-        <a href="https://www.facebook.com/jivaoriginals">
-          <img
-            alt=""
-            src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/fb2.svg?alt=media&token=0cc8b80d-8da9-43d4-9767-0248c8669473"
-            width="30em"
-            height="auto"
-          ></img>
-        </a>
-      </nav>
+        ></div>
+        <div>
+          {termsDisplay && (
+            <div>
+              <PrivacyAndTermsAgreement />
+              {wishlistTempCache.length > 0 && (
+                <h4
+                  style={{
+                    position: "relative",
+                    // "background-color": "#565759",
+                    backgroundImage:
+                      "linear-gradient(to bottom right, #241d2b, black)",
+                    padding: ".25em",
+                    "border-radius": "13px",
+                    width: `${isLargeScreen ? "30%" : "90%"}`,
+                    left: `${isLargeScreen ? "35vw" : "5vw"}`,
+                  }}
+                  classsName="grayblock centered"
+                >
+                  Sign in to see your Favorites
+                </h4>
+              )}
+              <RecentlyViewed />
+            </div>
+          )}
+        </div>
+        <br></br>
+      </div>
     </div>
   );
 }

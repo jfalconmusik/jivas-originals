@@ -18,6 +18,42 @@ body {
   /* font-family: "Merienda"; */
   font-weight: bold;
   font-family: "Luminari";
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* .homeScreen {
+  position: relative;
+  margin: 0 auto;
+  display: inline;
+} */
+
+.backgroundElement {
+  /* parallax element - background */
+  transform: translateZ(-1px) scale(3.3);
+  height: 200%;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/pattern-big.jpg?alt=media&token=e71c2b94-9fda-4cd7-bfd5-c2eb727fb6d0");
+  background-repeat: repeat;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.baseElement {
+  /* parallax element - foreground */
+  transform: translateZ(0);
+  /* -webkit-transform: translateZ(0);
+  transform: translateZ(0); */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .App-logo {
@@ -95,14 +131,16 @@ background-image: url("https://firebasestorage.googleapis.com/v0/b/jiva-website-
 }
 
 .footer {
-  padding-top: 10px;
-  margin: -10px;
+  top: 20px;
+  padding: 10px;
+  /* margin: -10px; */
   overflow: hidden;
   background-color: #333;
   list-style-type: none;
   color: white;
   width: 100%;
   text-align: center;
+  position: relative;
 }
 
 .footItem {

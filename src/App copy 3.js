@@ -2212,121 +2212,130 @@ function App() {
           No
         </button>
       </div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/blog">
-          <Blog />
-        </Route>
-        <Route path="/checkout">
-          <ShippingComponent />
-        </Route>
-        <Route path="/express-checkout">
-          <Elements stripe={stripePromise}>
-            <ExpressCheckout />
-          </Elements>
-        </Route>
-        <Route exact path="/shop">
-          <Shop />
-        </Route>
-        <Route path="/shop/full-sets">
-          <FullSets />
-        </Route>
-        <Route path="/shop/tops">
-          <Tops />
-        </Route>
-        <Route path="/shop/skirts">
-          <Skirts />
-        </Route>
-        <Route path="/shop/belts">
-          <Belts />
-        </Route>
-        {allProducts.map((product) => {
-          let productPageLinkString = product[0].split(" ").join("-");
-          return (
-            <Route path={`/product/${productPageLinkString}`}>
-              <ProductPage item={product} />
-            </Route>
-          );
-        })}
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="cart-sign-in">
-          <CartSignIn />
-        </Route>
-        <Route path="/account">
-          <Account />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/sign-in-successful">
-          <SignInSuccessful />
-        </Route>
-        <Route path="/privacy-policy">
-          <PrivacyPolicy />
-        </Route>
-        <Route path="/terms-of-service">
-          <TermsOfService />
-        </Route>
-        <Route path="/sign-in-success-email">
-          <SignInSuccessEmail />
-        </Route>
-        <Route path="/sign-in-with-email">
-          <SignInWithEmail />
-        </Route>
-        <Route path="/order-success">
-          <OrderSuccess />
-        </Route>
-        <Route path="/my-orders">
-          <MyOrders />
-        </Route>
-        <Route path="/favorites">
-          <Favorites />
-        </Route>
-        <Route path="/return-policy">
-          <ReturnPolicy />
-        </Route>
-      </Switch>
-
       <div
-        id="firebaseui-auth-container"
-        style={{
-          zIndex: "86",
-          marginTop: "-.5em",
-          position: "relative",
-          bottom: "1.2em",
-        }}
+        className="backgroundElement"
+        style={{ display: `${onHomeScreen ? "" : "none"}` }}
       ></div>
-      <div>
-        {termsDisplay && (
-          <div>
-            <PrivacyAndTermsAgreement />
-            {wishlistTempCache.length > 0 && (
-              <h4
-                style={{
-                  position: "relative",
-                  // "background-color": "#565759",
-                  backgroundImage:
-                    "linear-gradient(to bottom right, #241d2b, black)",
-                  padding: ".25em",
-                  "border-radius": "13px",
-                  width: `${isLargeScreen ? "30%" : "90%"}`,
-                  left: `${isLargeScreen ? "35vw" : "5vw"}`,
-                }}
-                classsName="grayblock centered"
-              >
-                Sign in to see your Favorites
-              </h4>
-            )}
-            <RecentlyViewed />
-          </div>
-        )}
+      <div
+        className="baseElement"
+        style={{ backgroundImage: `${onHomeScreen ? "" : ""}` }}
+      >
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/blog">
+            <Blog />
+          </Route>
+          <Route path="/checkout">
+            <ShippingComponent />
+          </Route>
+          <Route path="/express-checkout">
+            <Elements stripe={stripePromise}>
+              <ExpressCheckout />
+            </Elements>
+          </Route>
+          <Route exact path="/shop">
+            <Shop />
+          </Route>
+          <Route path="/shop/full-sets">
+            <FullSets />
+          </Route>
+          <Route path="/shop/tops">
+            <Tops />
+          </Route>
+          <Route path="/shop/skirts">
+            <Skirts />
+          </Route>
+          <Route path="/shop/belts">
+            <Belts />
+          </Route>
+          {allProducts.map((product) => {
+            let productPageLinkString = product[0].split(" ").join("-");
+            return (
+              <Route path={`/product/${productPageLinkString}`}>
+                <ProductPage item={product} />
+              </Route>
+            );
+          })}
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+          <Route path="cart-sign-in">
+            <CartSignIn />
+          </Route>
+          <Route path="/account">
+            <Account />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/sign-in-successful">
+            <SignInSuccessful />
+          </Route>
+          <Route path="/privacy-policy">
+            <PrivacyPolicy />
+          </Route>
+          <Route path="/terms-of-service">
+            <TermsOfService />
+          </Route>
+          <Route path="/sign-in-success-email">
+            <SignInSuccessEmail />
+          </Route>
+          <Route path="/sign-in-with-email">
+            <SignInWithEmail />
+          </Route>
+          <Route path="/order-success">
+            <OrderSuccess />
+          </Route>
+          <Route path="/my-orders">
+            <MyOrders />
+          </Route>
+          <Route path="/favorites">
+            <Favorites />
+          </Route>
+          <Route path="/return-policy">
+            <ReturnPolicy />
+          </Route>
+        </Switch>
+
+        <div
+          id="firebaseui-auth-container"
+          style={{
+            zIndex: "86",
+            marginTop: "-.5em",
+            position: "relative",
+            bottom: "1.2em",
+          }}
+        ></div>
+        <div>
+          {termsDisplay && (
+            <div>
+              <PrivacyAndTermsAgreement />
+              {wishlistTempCache.length > 0 && (
+                <h4
+                  style={{
+                    position: "relative",
+                    // "background-color": "#565759",
+                    backgroundImage:
+                      "linear-gradient(to bottom right, #241d2b, black)",
+                    padding: ".25em",
+                    "border-radius": "13px",
+                    width: `${isLargeScreen ? "30%" : "90%"}`,
+                    left: `${isLargeScreen ? "35vw" : "5vw"}`,
+                  }}
+                  classsName="grayblock centered"
+                >
+                  Sign in to see your Favorites
+                </h4>
+              )}
+              <RecentlyViewed />
+            </div>
+          )}
+        </div>
       </div>
       <br></br>
       <nav className="footer">

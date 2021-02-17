@@ -5,6 +5,7 @@ import CartItemList from "./CartItemList";
 import { Context } from "./Context";
 import Flexbox from "flexbox-react";
 import RecentlyViewed from "./RecentlyViewed";
+import Footer from "./Footer";
 
 // objectives:
 // Handle tax and shipping.
@@ -31,12 +32,14 @@ function Cart() {
     isLargeScreen,
     setSearchString,
     setOnProductPage,
+    setOnHomeScreen,
   } = useContext(Context);
 
   useEffect(() => {
     setSearchString("");
     setTermsDisplay(false);
     setOnCheckout(false);
+    setOnHomeScreen(false);
     setRouterString("cart");
     document.getElementById("firebaseui-auth-container").style.display = "none";
     // document.getElementById('smallSearch').style.display = "none"
@@ -322,6 +325,7 @@ function Cart() {
           </li>
         </ul>
       </nav>
+      <Footer />
     </div>
   );
 
