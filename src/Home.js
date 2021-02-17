@@ -896,7 +896,7 @@ function Home() {
               position: `${isLargeScreen ? "sticky" : "absolute"}`,
               "overflow-x": "visible",
               top: "30em",
-              left: "90%",
+              left: "91%",
               zIndex: "90",
               display: `${isLargeScreen ? "initial" : "none"}`,
               fontSize: "larger",

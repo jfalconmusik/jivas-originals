@@ -937,6 +937,8 @@ function ProductPage(props) {
                       maxWidth: `${!isPortrait ? "500px" : "80vw"}`,
                       right: "3vw",
                       position: "relative",
+                      "text-shadow":
+                        "-1px 1px 0 #000; 1px 1px 0 #000; 1px -1px 0 #000; -1px -1px 0 #000;",
                     }}
                   >
                     {longDescript}

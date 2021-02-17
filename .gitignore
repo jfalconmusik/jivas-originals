@@ -25,3 +25,5 @@ yarn-error.log*
 sendgrid.env
 
 /src/index.js
+
+/src/serviceAccountKey.json

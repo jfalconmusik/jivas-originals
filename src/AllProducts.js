@@ -357,7 +357,15 @@ function AllProducts() {
                   <div className="row">
                     <Flexbox flexDirection="row">
                       {!sale ? (
-                        <p className="column">${item[2]}.00</p>
+                        <p
+                          className="column"
+                          style={{
+                            "text-shadow":
+                              "-1px 1px 0 #000; 1px 1px 0 #000; 1px -1px 0 #000; -1px -1px 0 #000;",
+                          }}
+                        >
+                          ${item[2]}.00
+                        </p>
                       ) : (
                         <Flexbox
                           flexDirection="row"
@@ -368,6 +376,8 @@ function AllProducts() {
                               "margin-right": "2vw",
                               color: "#565759",
                               opacity: "0.9",
+                              "text-shadow":
+                                "-1px 1px 0 #000; 1px 1px 0 #000; 1px -1px 0 #000; -1px -1px 0 #000;",
                             }}
                           >
                             <del>${item[2]}.00</del>
@@ -411,6 +421,8 @@ function AllProducts() {
                         "linear-gradient(to bottom right, #cce0ff, #404963)",
                       "background-color": "#565759",
                       "border-radius": "10px",
+                      "text-shadow":
+                        "-1px 1px 0 #000; 1px 1px 0 #000; 1px -1px 0 #000; -1px -1px 0 #000;",
                     }}
                   >{`${item[3]}`}</p>
                 </div>
@@ -595,6 +607,8 @@ function AllProducts() {
                       "background-image":
                         "linear-gradient(to bottom right, #cce0ff, #404963)",
                       "border-radius": "10px",
+                      "text-shadow":
+                        "-1px 3px 0 #000; 1px 1px 0 #000; 1px -1px 0 #000; -1px -1px 0 #000;",
                     }}
                   >{`${item[3]}`}</p>
                 </div>

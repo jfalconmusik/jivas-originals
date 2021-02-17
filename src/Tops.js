@@ -528,6 +528,8 @@ function Tops() {
                         "background-image":
                           "linear-gradient(to bottom right, #cce0ff, #404963)",
                         "border-radius": "10px",
+                        "text-shadow":
+                          "-1px 1px 0 #000; 1px 1px 0 #000; 1px -1px 0 #000; -1px -1px 0 #000;",
                       }}
                     >{`${item[3]}`}</p>
                   </div>
