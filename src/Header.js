@@ -220,7 +220,7 @@ function Header() {
             <img
               style={{
                 height: "100px",
-                width: `${isPortrait || isSmallScreen ? "100vw" : "auto"}`,
+                width: `${isPortrait || isSmallScreen ? "90vw" : "auto"}`,
                 right: `${isPortrait || isSmallScreen ? "20vw" : "5vw"}`,
                 position: "relative",
                 margin: "0 auto",

@@ -207,6 +207,7 @@ function Home() {
         incrementHome();
       }}
     >
+      {isPortrait || isSmallScreen}
       <nav
         style={{ marginTop: "1em" }}
         className="darkNav"
@@ -315,7 +316,9 @@ function Home() {
             </button>
           </Link>
           <Link to="/">
-            <h3>The Jiva Team</h3>
+            <h2 style={{ fontFamily: "Luminari", fontSize: "60px" }}>
+              The Jiva Team
+            </h2>
           </Link>
         </h3>
         <h3 style={{ marginBottom: "-5em" }}>
@@ -412,7 +415,7 @@ function Home() {
               className="carouselDialogue thumbnail"
               src={`${
                 !isPortrait
-                  ? "https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70346107_2503742322981878_8139699380883030016_o.jpg?alt=media&token=021e7085-75ff-47c7-8e09-739326bcb5b9"
+                  ? "https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fdria%20meadow%20cropped.jpg?alt=media&token=53d4d632-cb62-4db6-b160-7e6bd6333540"
                   : "https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70346107_2503742322981878_8139699380883030016_o%20(2).jpg?alt=media&token=38319a3b-4d5b-43b1-a23e-89409f72813b"
               }`}
               onDragStart={handleOnDragStart}
@@ -450,102 +453,146 @@ function Home() {
         </h3>
       </AliceCarousel>
       <br></br>
-      <div className="shadowed centered">
-        <Flexbox
-          className="centered homeScreen"
-          flexDirection={`${isLargeScreen ? "row" : "column"}`}
-        >
-          <Link to="/shop" className="homeBox">
+      {isPortrait || isSmallScreen ? (
+        <div>
+          <div className="shadowed centered">
+            <Flexbox
+              className="centered"
+              flexDirection={`${isLargeScreen ? "row" : "column"}`}
+            >
+              <Link to="/shop" className="homeBox">
+                <Flexbox
+                  flexDirection="column"
+                  style={{ margin: "1em" }}
+                  className="innerBox"
+                >
+                  <img
+                    alt=""
+                    className="centered thumbnail"
+                    width="150em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20dress%20final%20white.svg?alt=media&token=9c6af742-7966-4490-a63b-c5e9b96887a5"
+                  />
+                  <h4>Look Gorgeous</h4>
+                  <p>Outfits to make any day special.</p>
+                </Flexbox>
+              </Link>
+              <Link to="/shop" className="homeBox">
+                {/* eventually change this to lead elsewhere */}
+                <Flexbox
+                  flexDirection="column"
+                  style={{ margin: "1em" }}
+                  className="innerBox"
+                >
+                  <img
+                    alt=""
+                    className="centered thumbnail"
+                    width="150em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20shop%20final%20white.svg?alt=media&token=f39ea99b-a259-4525-bca7-2b6861efe459"
+                  />
+                  <h4>Support Small Business</h4>
+                  <p>Clothing designed by artists from around the world.</p>
+                </Flexbox>
+              </Link>
+              <Link to="/shop" className="homeBox">
+                {/* eventually change this to lead elsewhere */}
+                <Flexbox
+                  flexDirection="column"
+                  style={{ margin: "1em" }}
+                  className="innerBox"
+                >
+                  <img
+                    alt=""
+                    className="centered thumbnail"
+                    width="150em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/h%20love%20final.svg?alt=media&token=e4c18e44-7cd7-4dc4-8c04-3819a05b326b"
+                  />
+                  <h4>Give Back</h4>
+                  <p>5% of sales go to charity</p>
+                </Flexbox>
+              </Link>
+            </Flexbox>
+          </div>
+          <Link
+            to="/shop"
+            style={{
+              position: `${isLargeScreen ? "sticky" : "absolute"}`,
+              "overflow-x": "visible",
+              top: "30em",
+              left: "90%",
+              zIndex: "90",
+              display: `${isLargeScreen ? "initial" : "none"}`,
+              fontSize: "larger",
+            }}
+          >
+            <button
+              type="button"
+              className="button primary centered glowButton"
+              style={{ width: "150px" }}
+            >
+              Shop Now
+            </button>
+          </Link>
+          <br></br>
+          <div></div>
+          <br></br>
+          <br></br>
+          {/* get ready, this is where I have two versions for each box, responsive yeh: */}
+          {isLargeScreen ? (
+            <div
+              className="centered rounded"
+              style={{
+                "background-color": "black",
+                "box-shadow": "0px 0px 5px white",
+                width: "75vw",
+              }}
+            >
+              <div class="media-object">
+                <div class="media-object-section">
+                  <img
+                    alt=""
+                    className="thumbnail"
+                    width="300em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/294835_178973432170960_976701_n.jpg?alt=media&token=18a7fcd3-da83-4ba2-aaa6-e6bf19d1bb3c"
+                  />
+                </div>
+                <div class="media-object-section">
+                  <h4 onLoad={() => incrementHome()}>Our Story</h4>
+                  <p>
+                    Jiva herself was a pioneer of modern traveling theatre,
+                    performing many original plays at renaissance festivals
+                    around the country. Eventually the costumes she and her
+                    troupe wore began to get a lot of attention of their own.
+                    The Jiva Originals shop was born, an outlet for clothing
+                    both from around the world and from local seamstresses and
+                    tailors in the United States. All of our clothes are meant
+                    to make you feel like the star of your own play. Mixing
+                    historical and modern fashions, we hope to bridge the gap
+                    between our past and present.
+                  </p>
+                  <br></br>
+                  <p>
+                    The 3 Joys of Life: To know the world, to know yourself, and
+                    to look amazing while doing it!
+                  </p>
+                  <br></br>
+                </div>
+              </div>
+              <br></br>
+            </div>
+          ) : (
             <Flexbox
               flexDirection="column"
-              style={{ margin: "1em" }}
-              className="innerBox"
+              className="centered rounded"
+              style={{
+                "background-color": "black",
+                "box-shadow": "0px 0px 5px white",
+                width: "75vw",
+              }}
             >
-              <img
-                alt=""
-                className="centered thumbnail"
-                width="150em"
-                height="auto"
-                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20dress%20final%20white.svg?alt=media&token=9c6af742-7966-4490-a63b-c5e9b96887a5"
-              />
-              <h4>Look Gorgeous</h4>
-              <p>Outfits to make any day special.</p>
-            </Flexbox>
-          </Link>
-          <Link to="/shop" className="homeBox">
-            {/* eventually change this to lead elsewhere */}
-            <Flexbox
-              flexDirection="column"
-              style={{ margin: "1em" }}
-              className="innerBox"
-            >
-              <img
-                alt=""
-                className="centered thumbnail"
-                width="150em"
-                height="auto"
-                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20shop%20final%20white.svg?alt=media&token=f39ea99b-a259-4525-bca7-2b6861efe459"
-              />
-              <h4>Support Small Business</h4>
-              <p>Clothing designed by artists from around the world.</p>
-            </Flexbox>
-          </Link>
-          <Link to="/shop" className="homeBox">
-            {/* eventually change this to lead elsewhere */}
-            <Flexbox
-              flexDirection="column"
-              style={{ margin: "1em" }}
-              className="innerBox"
-            >
-              <img
-                alt=""
-                className="centered thumbnail"
-                width="150em"
-                height="auto"
-                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/h%20love%20final.svg?alt=media&token=e4c18e44-7cd7-4dc4-8c04-3819a05b326b"
-              />
-              <h4>Give Back</h4>
-              <p>5% of sales go to charity</p>
-            </Flexbox>
-          </Link>
-        </Flexbox>
-      </div>
-      <Link
-        to="/shop"
-        style={{
-          position: `${isLargeScreen ? "sticky" : "absolute"}`,
-          "overflow-x": "visible",
-          top: "30em",
-          left: "90%",
-          zIndex: "90",
-          display: `${isLargeScreen ? "initial" : "none"}`,
-          fontSize: "larger",
-        }}
-      >
-        <button
-          type="button"
-          className="button primary centered glowButton"
-          style={{ width: "150px" }}
-        >
-          Shop Now
-        </button>
-      </Link>
-      <br></br>
-      <div></div>
-      <br></br>
-      <br></br>
-      {/* get ready, this is where I have two versions for each box, responsive yeh: */}
-      {isLargeScreen ? (
-        <div
-          className="centered rounded"
-          style={{
-            "background-color": "black",
-            "box-shadow": "0px 0px 5px white",
-            width: "75vw",
-          }}
-        >
-          <div class="media-object">
-            <div class="media-object-section">
               <img
                 alt=""
                 className="thumbnail"
@@ -553,328 +600,736 @@ function Home() {
                 height="auto"
                 src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/294835_178973432170960_976701_n.jpg?alt=media&token=18a7fcd3-da83-4ba2-aaa6-e6bf19d1bb3c"
               />
-            </div>
-            <div class="media-object-section">
-              <h4 onLoad={() => incrementHome()}>Our Story</h4>
-              <p>
-                Jiva herself was a pioneer of modern traveling theatre,
-                performing many original plays at renaissance festivals around
-                the country. Eventually the costumes she and her troupe wore
-                began to get a lot of attention of their own. The Jiva Originals
-                shop was born, an outlet for clothing both from around the world
-                and from local seamstresses and tailors in the United States.
-                All of our clothes are meant to make you feel like the star of
-                your own play. Mixing historical and modern fashions, we hope to
-                bridge the gap between our past and present.
-              </p>
-              <br></br>
-              <p>
-                The 3 Joys of Life: To know the world, to know yourself, and to
-                look amazing while doing it!
-              </p>
-              <br></br>
-            </div>
-          </div>
+              <div>
+                <h4>Our Story</h4>
+                <p>
+                  Jiva herself was a pioneer of modern traveling theatre,
+                  performing many original plays at renaissance festivals around
+                  the country. Eventually the costumes she and her troupe wore
+                  began to get a lot of attention of their own. The Jiva
+                  Originals shop was born, an outlet for clothing both from
+                  around the world and from local seamstresses and tailors in
+                  the United States. All of our clothes are meant to make you
+                  feel like the star of your own theatre. Mixing historical and
+                  modern fashions, we hope to bridge the gap between who we are
+                  today and who we can be tomorrow.
+                </p>
+                <br></br>
+                <p>
+                  The 3 Joys of Life: To know the world, to know yourself, and
+                  to look amazing while doing it!
+                </p>
+                <br></br>
+              </div>
+            </Flexbox>
+          )}
           <br></br>
-        </div>
-      ) : (
-        <Flexbox
-          flexDirection="column"
-          className="centered rounded"
-          style={{
-            "background-color": "black",
-            "box-shadow": "0px 0px 5px white",
-            width: "75vw",
-          }}
-        >
-          <img
-            alt=""
-            className="thumbnail"
-            width="300em"
-            height="auto"
-            src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/294835_178973432170960_976701_n.jpg?alt=media&token=18a7fcd3-da83-4ba2-aaa6-e6bf19d1bb3c"
-          />
-          <div>
-            <h4>Our Story</h4>
-            <p>
-              Jiva herself was a pioneer of modern traveling theatre, performing
-              many original plays at renaissance festivals around the country.
-              Eventually the costumes she and her troupe wore began to get a lot
-              of attention of their own. The Jiva Originals shop was born, an
-              outlet for clothing both from around the world and from local
-              seamstresses and tailors in the United States. All of our clothes
-              are meant to make you feel like the star of your own theatre.
-              Mixing historical and modern fashions, we hope to bridge the gap
-              between who we are today and who we can be tomorrow.
-            </p>
-            <br></br>
-            <p>
-              The 3 Joys of Life: To know the world, to know yourself, and to
-              look amazing while doing it!
-            </p>
-            <br></br>
-          </div>
-        </Flexbox>
-      )}
-      <br></br>
-      {isLargeScreen ? (
-        <div
-          className="centered rounded"
-          style={{
-            "background-color": "black",
-            "box-shadow": "0px 0px 5px white",
-            width: "75vw",
-            position: "relative",
-            zIndex: "94",
-          }}
-        >
-          <h2>Event Schedule</h2>
-          <p>
-            Wanna shop in person? Come find us at a renaissance faire near you!
-          </p>
-          <div
-            className="media-object centered roundedLight"
-            style={{
-              position: "relative",
-              left: "30%",
-              fontSize: `${isLargeScreen ? "initial" : "small"}`,
-            }}
-          >
-            <div class="media-object-section">
-              <img
-                alt=""
-                width="100em"
-                height="auto"
-                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
-              />
+          {isLargeScreen ? (
+            <div
+              className="centered rounded"
+              style={{
+                "background-color": "black",
+                "box-shadow": "0px 0px 5px white",
+                width: "75vw",
+                position: "relative",
+                zIndex: "94",
+              }}
+            >
+              <h2>Event Schedule</h2>
+              <p>
+                Wanna shop in person? Come find us at a renaissance faire near
+                you!
+              </p>
+              <div
+                className="media-object centered roundedLight"
+                style={{
+                  position: "relative",
+                  left: "30%",
+                  fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                }}
+              >
+                <div class="media-object-section">
+                  <img
+                    alt=""
+                    width="100em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
+                  />
+                </div>
+                <div class="media-object-section" style={{ left: "2.5em" }}>
+                  <h3>{`June & July`}:</h3>
+                  <span style={{ position: "relative", left: "36px" }}>
+                    <p>
+                      Colorado Renaissance Festival <br></br>
+                      <a
+                        href="https://coloradorenaissance.com/tickets/"
+                        className="rounded"
+                        style={{ padding: "5px" }}
+                      >
+                        Buy Tickets
+                      </a>
+                    </p>
+                  </span>
+                  <br></br>
+                </div>
+              </div>
+              <div
+                className="media-object centered roundedLight"
+                style={{
+                  position: "relative",
+                  left: "30%",
+                }}
+              >
+                <div class="media-object-section">
+                  <img
+                    alt=""
+                    width="100em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
+                  />
+                </div>
+                <div class="media-object-section">
+                  <h3>{`August & September`}:</h3>
+                  <span>
+                    <p>
+                      Michigan Renaissance Festival <br></br>
+                      <a
+                        className="rounded"
+                        style={{ padding: "5px" }}
+                        href="https://tickets.vendini.com/ticket-software.html?t=tix&w=52fbb7c1bb4fbf19606f318214d7b972&vqitq=c3eb8fc3-e0ed-46f3-91cf-3a677dfecad7&vqitp=ad290479-9395-4921-b92c-b993e890866b&vqitts=1593478462&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=09edb3976dc3b60114ff0c1d74b8c62e"
+                      >
+                        Buy Tickets
+                      </a>
+                    </p>
+                  </span>
+                  <br></br>
+                </div>
+              </div>
+              <div
+                className="media-object centered roundedLight"
+                style={{
+                  position: "relative",
+                  left: "30%",
+                }}
+              >
+                <div class="media-object-section">
+                  <img
+                    alt=""
+                    width="100em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
+                  />
+                </div>
+                <div class="media-object-section">
+                  <h3>{`October & November`}:</h3>
+                  <span>
+                    <p>
+                      Texas Renaissance Festival <br></br>
+                      <a
+                        className="rounded"
+                        style={{ padding: "5px" }}
+                        href="https://www.texrenfest.com/tickets-season-passes"
+                      >
+                        Buy Tickets
+                      </a>
+                    </p>
+                  </span>
+                  <br></br>
+                </div>
+              </div>
             </div>
-            <div class="media-object-section" style={{ left: "2.5em" }}>
-              <h3>{`June & July`}:</h3>
-              <span style={{ position: "relative", left: "36px" }}>
+          ) : (
+            <div>
+              <Flexbox
+                flexDirection="column"
+                className="centered rounded"
+                style={{
+                  "background-color": "black",
+                  "box-shadow": "0px 0px 5px white",
+                  width: "75vw",
+                  position: "relative",
+                }}
+              >
+                <h2>Event Schedule</h2>
                 <p>
-                  Colorado Renaissance Festival <br></br>
-                  <a
-                    href="https://coloradorenaissance.com/tickets/"
-                    className="rounded"
-                    style={{ padding: "5px" }}
-                  >
-                    Buy Tickets
-                  </a>
+                  Wanna shop in person? Come find us at a renaissance faire near
+                  you!
                 </p>
-              </span>
-              <br></br>
-            </div>
-          </div>
-          <div
-            className="media-object centered roundedLight"
-            style={{
-              position: "relative",
-              left: "30%",
-            }}
-          >
-            <div class="media-object-section">
-              <img
-                alt=""
-                width="100em"
-                height="auto"
-                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
-              />
-            </div>
-            <div class="media-object-section">
-              <h3>{`August & September`}:</h3>
-              <span>
-                <p>
-                  Michigan Renaissance Festival <br></br>
-                  <a
-                    className="rounded"
-                    style={{ padding: "5px" }}
-                    href="https://tickets.vendini.com/ticket-software.html?t=tix&w=52fbb7c1bb4fbf19606f318214d7b972&vqitq=c3eb8fc3-e0ed-46f3-91cf-3a677dfecad7&vqitp=ad290479-9395-4921-b92c-b993e890866b&vqitts=1593478462&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=09edb3976dc3b60114ff0c1d74b8c62e"
+                <div
+                  className="centered roundedLight"
+                  style={{
+                    position: "relative",
+                    fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                  }}
+                >
+                  <div>
+                    <img
+                      alt=""
+                      className="thumbnail"
+                      width="50vw"
+                      height="auto"
+                      src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
+                    />
+                  </div>
+                  <div>
+                    <h3>{`June & July`}:</h3>
+                    <span>
+                      <p>
+                        Colorado Renaissance Festival <br></br>
+                        <a
+                          className="rounded"
+                          style={{ padding: "5px" }}
+                          href="https://coloradorenaissance.com/tickets/"
+                        >
+                          Buy Tickets
+                        </a>
+                      </p>
+                    </span>
+                    <br></br>
+                  </div>
+                </div>
+                <div
+                  className="centered roundedLight"
+                  style={{
+                    position: "relative",
+                    fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                  }}
+                >
+                  <div>
+                    <img
+                      alt=""
+                      className="thumbnail"
+                      width="50vw"
+                      height="auto"
+                      src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
+                    />
+                  </div>
+                  <div>
+                    <h3>{`August & September`}:</h3>
+                    <span>
+                      <p>
+                        Michigan Renaissance Festival <br></br>
+                        <a
+                          className="rounded"
+                          style={{ padding: "5px" }}
+                          href="https://tickets.vendini.com/ticket-software.html?t=tix&w=52fbb7c1bb4fbf19606f318214d7b972&vqitq=c3eb8fc3-e0ed-46f3-91cf-3a677dfecad7&vqitp=ad290479-9395-4921-b92c-b993e890866b&vqitts=1593478462&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=09edb3976dc3b60114ff0c1d74b8c62e"
+                        >
+                          Buy Tickets
+                        </a>
+                      </p>
+                    </span>
+                    <br></br>
+                  </div>
+                </div>
+                <div
+                  className="centered roundedLight"
+                  style={{
+                    position: "relative",
+                    fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                  }}
+                >
+                  <div>
+                    <img
+                      alt=""
+                      className="thumbnail"
+                      width="50vw"
+                      height="auto"
+                      src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
+                    />
+                  </div>
+                  <div>
+                    <h3>{`October & November`}:</h3>
+                    <span>
+                      <p>
+                        Texas Renaissance Festival <br></br>
+                        <a
+                          className="rounded"
+                          style={{ padding: "5px" }}
+                          href="https://www.texrenfest.com/tickets-season-passes"
+                        >
+                          Buy Tickets
+                        </a>
+                      </p>
+                    </span>
+                    <br></br>
+                  </div>
+                </div>
+              </Flexbox>
+              <div
+                className="rounded centered"
+                style={{
+                  marginTop: "2em",
+                  width: "75vw",
+                  marginBottom: "-1em",
+                }}
+              >
+                <Link
+                  to="/shop"
+                  style={{
+                    "overflow-x": "visible",
+                    top: "30em",
+                    left: "90%",
+                    zIndex: "90",
+                    fontSize: "larger",
+                  }}
+                >
+                  <button
+                    type="button"
+                    className="button primary centered glowButton"
+                    style={{ width: "200px", marginTop: "1em" }}
                   >
-                    Buy Tickets
-                  </a>
-                </p>
-              </span>
-              <br></br>
+                    Shop Now
+                  </button>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div
-            className="media-object centered roundedLight"
-            style={{
-              position: "relative",
-              left: "30%",
-            }}
-          >
-            <div class="media-object-section">
-              <img
-                alt=""
-                width="100em"
-                height="auto"
-                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
-              />
-            </div>
-            <div class="media-object-section">
-              <h3>{`October & November`}:</h3>
-              <span>
-                <p>
-                  Texas Renaissance Festival <br></br>
-                  <a
-                    className="rounded"
-                    style={{ padding: "5px" }}
-                    href="https://www.texrenfest.com/tickets-season-passes"
-                  >
-                    Buy Tickets
-                  </a>
-                </p>
-              </span>
-              <br></br>
-            </div>
-          </div>
+          )}
+          <br></br>
+          <br></br>
+          <ReturnPolicy className="centered" />
         </div>
       ) : (
         <div>
-          <Flexbox
-            flexDirection="column"
-            className="centered rounded"
+          <Link
+            to="/shop"
             style={{
-              "background-color": "black",
-              "box-shadow": "0px 0px 5px white",
-              width: "75vw",
-              position: "relative",
+              position: `${isLargeScreen ? "sticky" : "absolute"}`,
+              "overflow-x": "visible",
+              top: "30em",
+              left: "90%",
+              zIndex: "90",
+              display: `${isLargeScreen ? "initial" : "none"}`,
+              fontSize: "larger",
             }}
           >
-            <h2>Event Schedule</h2>
-            <p>
-              Wanna shop in person? Come find us at a renaissance faire near
-              you!
-            </p>
-            <div
-              className="centered roundedLight"
-              style={{
-                position: "relative",
-                fontSize: `${isLargeScreen ? "initial" : "small"}`,
-              }}
+            <button
+              type="button"
+              className="button primary centered glowButton"
+              style={{ width: "150px" }}
             >
-              <div>
-                <img
-                  alt=""
-                  className="thumbnail"
-                  width="50vw"
-                  height="auto"
-                  src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
-                />
-              </div>
-              <div>
-                <h3>{`June & July`}:</h3>
-                <span>
-                  <p>
-                    Colorado Renaissance Festival <br></br>
-                    <a
-                      className="rounded"
-                      style={{ padding: "5px" }}
-                      href="https://coloradorenaissance.com/tickets/"
+              Shop Now
+            </button>
+          </Link>
+          <div className="homeScreen">
+            <div className="backgroundElement"></div>
+            <div className="baseElement">
+              <div className="shadowed centered">
+                <Flexbox
+                  className="centered"
+                  flexDirection={`${isLargeScreen ? "row" : "column"}`}
+                >
+                  <Link to="/shop" className="homeBox">
+                    <Flexbox
+                      flexDirection="column"
+                      style={{ margin: "1em" }}
+                      className="innerBox"
                     >
-                      Buy Tickets
-                    </a>
-                  </p>
-                </span>
-                <br></br>
-              </div>
-            </div>
-            <div
-              className="centered roundedLight"
-              style={{
-                position: "relative",
-                fontSize: `${isLargeScreen ? "initial" : "small"}`,
-              }}
-            >
-              <div>
-                <img
-                  alt=""
-                  className="thumbnail"
-                  width="50vw"
-                  height="auto"
-                  src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
-                />
-              </div>
-              <div>
-                <h3>{`August & September`}:</h3>
-                <span>
-                  <p>
-                    Michigan Renaissance Festival <br></br>
-                    <a
-                      className="rounded"
-                      style={{ padding: "5px" }}
-                      href="https://tickets.vendini.com/ticket-software.html?t=tix&w=52fbb7c1bb4fbf19606f318214d7b972&vqitq=c3eb8fc3-e0ed-46f3-91cf-3a677dfecad7&vqitp=ad290479-9395-4921-b92c-b993e890866b&vqitts=1593478462&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=09edb3976dc3b60114ff0c1d74b8c62e"
+                      <img
+                        alt=""
+                        className="centered thumbnail"
+                        width="150em"
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20dress%20final%20white.svg?alt=media&token=9c6af742-7966-4490-a63b-c5e9b96887a5"
+                      />
+                      <h4>Look Gorgeous</h4>
+                      <p>Outfits to make any day special.</p>
+                    </Flexbox>
+                  </Link>
+                  <Link to="/shop" className="homeBox">
+                    {/* eventually change this to lead elsewhere */}
+                    <Flexbox
+                      flexDirection="column"
+                      style={{ margin: "1em" }}
+                      className="innerBox"
                     >
-                      Buy Tickets
-                    </a>
-                  </p>
-                </span>
-                <br></br>
-              </div>
-            </div>
-            <div
-              className="centered roundedLight"
-              style={{
-                position: "relative",
-                fontSize: `${isLargeScreen ? "initial" : "small"}`,
-              }}
-            >
-              <div>
-                <img
-                  alt=""
-                  className="thumbnail"
-                  width="50vw"
-                  height="auto"
-                  src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
-                />
-              </div>
-              <div>
-                <h3>{`October & November`}:</h3>
-                <span>
-                  <p>
-                    Texas Renaissance Festival <br></br>
-                    <a
-                      className="rounded"
-                      style={{ padding: "5px" }}
-                      href="https://www.texrenfest.com/tickets-season-passes"
+                      <img
+                        alt=""
+                        className="centered thumbnail"
+                        width="150em"
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20shop%20final%20white.svg?alt=media&token=f39ea99b-a259-4525-bca7-2b6861efe459"
+                      />
+                      <h4>Support Small Business</h4>
+                      <p>Clothing designed by artists from around the world.</p>
+                    </Flexbox>
+                  </Link>
+                  <Link to="/shop" className="homeBox">
+                    {/* eventually change this to lead elsewhere */}
+                    <Flexbox
+                      flexDirection="column"
+                      style={{ margin: "1em" }}
+                      className="innerBox"
                     >
-                      Buy Tickets
-                    </a>
-                  </p>
-                </span>
-                <br></br>
+                      <img
+                        alt=""
+                        className="centered thumbnail"
+                        width="150em"
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/h%20love%20final.svg?alt=media&token=e4c18e44-7cd7-4dc4-8c04-3819a05b326b"
+                      />
+                      <h4>Give Back</h4>
+                      <p>5% of sales go to charity</p>
+                    </Flexbox>
+                  </Link>
+                </Flexbox>
               </div>
+
+              <br></br>
+              <div></div>
+              <br></br>
+              <br></br>
+              {/* get ready, this is where I have two versions for each box, responsive yeh: */}
+              {isLargeScreen ? (
+                <div
+                  className="centered rounded"
+                  style={{
+                    "background-color": "black",
+                    "box-shadow": "0px 0px 5px white",
+                    width: "75vw",
+                  }}
+                >
+                  <div class="media-object">
+                    <div class="media-object-section">
+                      <img
+                        alt=""
+                        className="thumbnail"
+                        width="300em"
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/294835_178973432170960_976701_n.jpg?alt=media&token=18a7fcd3-da83-4ba2-aaa6-e6bf19d1bb3c"
+                      />
+                    </div>
+                    <div class="media-object-section">
+                      <h4 onLoad={() => incrementHome()}>Our Story</h4>
+                      <p>
+                        Jiva herself was a pioneer of modern traveling theatre,
+                        performing many original plays at renaissance festivals
+                        around the country. Eventually the costumes she and her
+                        troupe wore began to get a lot of attention of their
+                        own. The Jiva Originals shop was born, an outlet for
+                        clothing both from around the world and from local
+                        seamstresses and tailors in the United States. All of
+                        our clothes are meant to make you feel like the star of
+                        your own play. Mixing historical and modern fashions, we
+                        hope to bridge the gap between our past and present.
+                      </p>
+                      <br></br>
+                      <p>
+                        The 3 Joys of Life: To know the world, to know yourself,
+                        and to look amazing while doing it!
+                      </p>
+                      <br></br>
+                    </div>
+                  </div>
+                  <br></br>
+                </div>
+              ) : (
+                <Flexbox
+                  flexDirection="column"
+                  className="centered rounded"
+                  style={{
+                    "background-color": "black",
+                    "box-shadow": "0px 0px 5px white",
+                    width: "75vw",
+                  }}
+                >
+                  <img
+                    alt=""
+                    className="thumbnail"
+                    width="300em"
+                    height="auto"
+                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/294835_178973432170960_976701_n.jpg?alt=media&token=18a7fcd3-da83-4ba2-aaa6-e6bf19d1bb3c"
+                  />
+                  <div>
+                    <h4>Our Story</h4>
+                    <p>
+                      Jiva herself was a pioneer of modern traveling theatre,
+                      performing many original plays at renaissance festivals
+                      around the country. Eventually the costumes she and her
+                      troupe wore began to get a lot of attention of their own.
+                      The Jiva Originals shop was born, an outlet for clothing
+                      both from around the world and from local seamstresses and
+                      tailors in the United States. All of our clothes are meant
+                      to make you feel like the star of your own theatre. Mixing
+                      historical and modern fashions, we hope to bridge the gap
+                      between who we are today and who we can be tomorrow.
+                    </p>
+                    <br></br>
+                    <p>
+                      The 3 Joys of Life: To know the world, to know yourself,
+                      and to look amazing while doing it!
+                    </p>
+                    <br></br>
+                  </div>
+                </Flexbox>
+              )}
+              <br></br>
+              {isLargeScreen ? (
+                <div
+                  className="centered rounded"
+                  style={{
+                    "background-color": "black",
+                    "box-shadow": "0px 0px 5px white",
+                    width: "75vw",
+                    position: "relative",
+                    zIndex: "94",
+                  }}
+                >
+                  <h2>Event Schedule</h2>
+                  <p>
+                    Wanna shop in person? Come find us at a renaissance faire
+                    near you!
+                  </p>
+                  <div
+                    className="media-object centered roundedLight"
+                    style={{
+                      position: "relative",
+                      left: "30%",
+                      fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                    }}
+                  >
+                    <div class="media-object-section">
+                      <img
+                        alt=""
+                        width="100em"
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
+                      />
+                    </div>
+                    <div class="media-object-section" style={{ left: "2.5em" }}>
+                      <h3>{`June & July`}:</h3>
+                      <span style={{ position: "relative", left: "36px" }}>
+                        <p>
+                          Colorado Renaissance Festival <br></br>
+                          <a
+                            href="https://coloradorenaissance.com/tickets/"
+                            className="rounded"
+                            style={{ padding: "5px" }}
+                          >
+                            Buy Tickets
+                          </a>
+                        </p>
+                      </span>
+                      <br></br>
+                    </div>
+                  </div>
+                  <div
+                    className="media-object centered roundedLight"
+                    style={{
+                      position: "relative",
+                      left: "30%",
+                    }}
+                  >
+                    <div class="media-object-section">
+                      <img
+                        alt=""
+                        width="100em"
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
+                      />
+                    </div>
+                    <div class="media-object-section">
+                      <h3>{`August & September`}:</h3>
+                      <span>
+                        <p>
+                          Michigan Renaissance Festival <br></br>
+                          <a
+                            className="rounded"
+                            style={{ padding: "5px" }}
+                            href="https://tickets.vendini.com/ticket-software.html?t=tix&w=52fbb7c1bb4fbf19606f318214d7b972&vqitq=c3eb8fc3-e0ed-46f3-91cf-3a677dfecad7&vqitp=ad290479-9395-4921-b92c-b993e890866b&vqitts=1593478462&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=09edb3976dc3b60114ff0c1d74b8c62e"
+                          >
+                            Buy Tickets
+                          </a>
+                        </p>
+                      </span>
+                      <br></br>
+                    </div>
+                  </div>
+                  <div
+                    className="media-object centered roundedLight"
+                    style={{
+                      position: "relative",
+                      left: "30%",
+                    }}
+                  >
+                    <div class="media-object-section">
+                      <img
+                        alt=""
+                        width="100em"
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
+                      />
+                    </div>
+                    <div class="media-object-section">
+                      <h3>{`October & November`}:</h3>
+                      <span>
+                        <p>
+                          Texas Renaissance Festival <br></br>
+                          <a
+                            className="rounded"
+                            style={{ padding: "5px" }}
+                            href="https://www.texrenfest.com/tickets-season-passes"
+                          >
+                            Buy Tickets
+                          </a>
+                        </p>
+                      </span>
+                      <br></br>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <Flexbox
+                    flexDirection="column"
+                    className="centered rounded"
+                    style={{
+                      "background-color": "black",
+                      "box-shadow": "0px 0px 5px white",
+                      width: "75vw",
+                      position: "relative",
+                    }}
+                  >
+                    <h2>Event Schedule</h2>
+                    <p>
+                      Wanna shop in person? Come find us at a renaissance faire
+                      near you!
+                    </p>
+                    <div
+                      className="centered roundedLight"
+                      style={{
+                        position: "relative",
+                        fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                      }}
+                    >
+                      <div>
+                        <img
+                          alt=""
+                          className="thumbnail"
+                          width="50vw"
+                          height="auto"
+                          src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/70244366_2501612373194873_569183467091263488_n.jpg?alt=media&token=7d38652e-fe48-4cc2-84b3-f9872091f44b"
+                        />
+                      </div>
+                      <div>
+                        <h3>{`June & July`}:</h3>
+                        <span>
+                          <p>
+                            Colorado Renaissance Festival <br></br>
+                            <a
+                              className="rounded"
+                              style={{ padding: "5px" }}
+                              href="https://coloradorenaissance.com/tickets/"
+                            >
+                              Buy Tickets
+                            </a>
+                          </p>
+                        </span>
+                        <br></br>
+                      </div>
+                    </div>
+                    <div
+                      className="centered roundedLight"
+                      style={{
+                        position: "relative",
+                        fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                      }}
+                    >
+                      <div>
+                        <img
+                          alt=""
+                          className="thumbnail"
+                          width="50vw"
+                          height="auto"
+                          src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/42887344_1953618671327582_4439089665261174784_o.jpg?alt=media&token=1fd94ca2-0042-4a3d-8322-62a30af346af"
+                        />
+                      </div>
+                      <div>
+                        <h3>{`August & September`}:</h3>
+                        <span>
+                          <p>
+                            Michigan Renaissance Festival <br></br>
+                            <a
+                              className="rounded"
+                              style={{ padding: "5px" }}
+                              href="https://tickets.vendini.com/ticket-software.html?t=tix&w=52fbb7c1bb4fbf19606f318214d7b972&vqitq=c3eb8fc3-e0ed-46f3-91cf-3a677dfecad7&vqitp=ad290479-9395-4921-b92c-b993e890866b&vqitts=1593478462&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=09edb3976dc3b60114ff0c1d74b8c62e"
+                            >
+                              Buy Tickets
+                            </a>
+                          </p>
+                        </span>
+                        <br></br>
+                      </div>
+                    </div>
+                    <div
+                      className="centered roundedLight"
+                      style={{
+                        position: "relative",
+                        fontSize: `${isLargeScreen ? "initial" : "small"}`,
+                      }}
+                    >
+                      <div>
+                        <img
+                          alt=""
+                          className="thumbnail"
+                          width="50vw"
+                          height="auto"
+                          src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/1396816_647632598592869_748912369_o.jpg?alt=media&token=d92ae692-70c4-4fcb-bbf7-6becda76cf2d"
+                        />
+                      </div>
+                      <div>
+                        <h3>{`October & November`}:</h3>
+                        <span>
+                          <p>
+                            Texas Renaissance Festival <br></br>
+                            <a
+                              className="rounded"
+                              style={{ padding: "5px" }}
+                              href="https://www.texrenfest.com/tickets-season-passes"
+                            >
+                              Buy Tickets
+                            </a>
+                          </p>
+                        </span>
+                        <br></br>
+                      </div>
+                    </div>
+                  </Flexbox>
+                  <div
+                    className="rounded centered"
+                    style={{
+                      marginTop: "2em",
+                      width: "75vw",
+                      marginBottom: "-1em",
+                    }}
+                  >
+                    <Link
+                      to="/shop"
+                      style={{
+                        "overflow-x": "visible",
+                        top: "30em",
+                        left: "90%",
+                        zIndex: "90",
+                        fontSize: "larger",
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="button primary centered glowButton"
+                        style={{ width: "200px", marginTop: "1em" }}
+                      >
+                        Shop Now
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              )}
+              <br></br>
+              <br></br>
+              <ReturnPolicy className="centered" />
             </div>
-          </Flexbox>
-          <div
-            className="rounded centered"
-            style={{ marginTop: "2em", width: "75vw", marginBottom: "-1em" }}
-          >
-            <Link
-              to="/shop"
-              style={{
-                "overflow-x": "visible",
-                top: "30em",
-                left: "90%",
-                zIndex: "90",
-                fontSize: "larger",
-              }}
-            >
-              <button
-                type="button"
-                className="button primary centered glowButton"
-                style={{ width: "200px", marginTop: "1em" }}
-              >
-                Shop Now
-              </button>
-            </Link>
           </div>
         </div>
       )}
-      <br></br>
-      <br></br>
-      <ReturnPolicy className="centered" />
       <RecentlyViewed />
       <nav
         style={{ marginTop: "1em" }}
@@ -891,7 +1346,6 @@ function Home() {
           </li>
         </ul>
       </nav>
-      <Footer />
     </div>
   );
 }

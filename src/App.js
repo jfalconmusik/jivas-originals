@@ -44,6 +44,7 @@ import Wishlist from "./Wishlist";
 import Favorites from "./Favorites";
 import Sidebar from "react-sidebar";
 import RecentlyViewed from "./RecentlyViewed";
+import Footer from "./Footer";
 
 function App() {
   const options = ["one", "two", "three"];
@@ -1415,13 +1416,7 @@ function App() {
   ///    </Desktop Modal Popup Menus>
 
   return (
-    <div
-      className="App"
-      id="App"
-      style={{
-        maxWidth: `${isLargeScreen ? "99.55%" : "100%"}`,
-      }}
-    >
+    <div className="App" id="App">
       <progress
         id="progressBar"
         max="100"
@@ -1434,6 +1429,7 @@ function App() {
           top: "0em",
           position: "sticky",
           "overflow-x": "visible",
+          "overflow-y": "visible",
           transition: "value .7s",
         }}
       ></progress>
@@ -1505,21 +1501,23 @@ function App() {
                     transform: "scale(0.55)",
                   }}
                 ></img>
-                <h1
-                  style={{
-                    position: "relative",
-                    // "top": "2em",
-                    marginTop: ".3em",
-                    marginBottom: "22px",
-                    marginRight: "-.7em",
-                    marginLeft: "-.2em",
-                    color: "white",
-                    textDecoration: "none",
-                    fontFamily: "Luminari",
-                  }}
-                >
-                  Jiva
-                </h1>
+                <button type="button" style={{ outline: "none" }}>
+                  <h1
+                    style={{
+                      position: "relative",
+                      // "top": "2em",
+                      marginTop: ".36em",
+                      marginBottom: "22px",
+                      marginRight: "-.7em",
+                      marginLeft: "-.2em",
+                      color: "white",
+                      textDecoration: "none",
+                      fontFamily: "Luminari",
+                    }}
+                  >
+                    Jiva
+                  </h1>
+                </button>
               </Flexbox>
             </Link>
             <HomeMenu />
@@ -1679,14 +1677,15 @@ function App() {
                 <Link
                   style={{
                     float: "left",
-                    height: "50px",
+                    height: "100px",
                     left: `200px`,
-                    bottom: "7px",
+                    top: "-20px",
+                    bottom: "20px",
                     "overflow-x": "hidden",
                     visibility: `${listItemDisplay}`,
                     "font-size": "xx-large",
                     position: "absolute",
-                    padding: "10px",
+                    padding: "30px",
                     paddingBottom: "15px",
                   }}
                   to="/shop"
@@ -1701,9 +1700,10 @@ function App() {
             <li
               style={{
                 display: "flex",
-                float: "right",
+                // float: "left",
                 position: "relative",
                 whiteSpace: "nowrap",
+                right: "300px",
                 bottom: ".6em",
               }}
             >
@@ -1723,17 +1723,17 @@ function App() {
                     autocomplete="off"
                     style={{
                       position: "relative",
-                      bottom: "-3.5em",
-                      right: "1.8em",
-                      float: "left",
+                      bottom: "-2.8em",
+                      // right: "1.8em",
+                      // float: "left",
                       visibility: `${listItemDisplay}`,
                     }}
                   >
                     <div
                       className="autocomplete"
                       style={{
-                        right: "15%",
-                        bottom: "-15em",
+                        // right: "15%",
+                        // bottom: "-15em",
                         float: "left",
                       }}
                     >
@@ -1741,9 +1741,9 @@ function App() {
                         <Link to="/shop">
                           <input
                             style={{
-                              right: "4em",
+                              // right: "40em",
                               float: "left",
-                              width: "130%",
+                              width: "250%",
                             }}
                             type="text"
                             id="menuSearch2"
@@ -1767,7 +1767,9 @@ function App() {
                           style={{
                             right: "15%",
                             float: "left",
-                            width: "110%",
+                            width: "220%",
+                            top: "13px",
+                            position: "relative",
                           }}
                           type="text"
                           id="menuSearch2"
@@ -1795,7 +1797,8 @@ function App() {
                     position: "relative",
                     display: "flex",
                     flexDirection: "column",
-                    bottom: "8px",
+                    bottom: "13px",
+                    left: "240px",
                   }}
                 >
                   <Link to="/account" className="li row">
@@ -1809,16 +1812,17 @@ function App() {
                   style={{
                     display: "inline",
                     "white-space": "nowrap",
-                    bottom: "19px",
+                    bottom: "21px",
                     position: "relative",
+                    left: "280px",
                   }}
                 >
                   <img
                     alt="go to cart"
                     src={`${urlString}`}
                     id="headerCartIcon3"
-                    width="50px"
-                    height="50px"
+                    width="62px"
+                    height="62px"
                   ></img>
                 </Link>
               </span>
@@ -2213,129 +2217,125 @@ function App() {
           No
         </button>
       </div>
-      <div
-        className="backgroundElement"
-        style={{ display: `${onHomeScreen ? "" : "none"}` }}
-      ></div>
-      <div className="baseElement" style={{ top: "200px" }}>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/blog">
-            <Blog />
-          </Route>
-          <Route path="/checkout">
-            <ShippingComponent />
-          </Route>
-          <Route path="/express-checkout">
-            <Elements stripe={stripePromise}>
-              <ExpressCheckout />
-            </Elements>
-          </Route>
-          <Route exact path="/shop">
-            <Shop />
-          </Route>
-          <Route path="/shop/full-sets">
-            <FullSets />
-          </Route>
-          <Route path="/shop/tops">
-            <Tops />
-          </Route>
-          <Route path="/shop/skirts">
-            <Skirts />
-          </Route>
-          <Route path="/shop/belts">
-            <Belts />
-          </Route>
-          {allProducts.map((product) => {
-            let productPageLinkString = product[0].split(" ").join("-");
-            return (
-              <Route path={`/product/${productPageLinkString}`}>
-                <ProductPage item={product} />
-              </Route>
-            );
-          })}
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="cart-sign-in">
-            <CartSignIn />
-          </Route>
-          <Route path="/account">
-            <Account />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/sign-in-successful">
-            <SignInSuccessful />
-          </Route>
-          <Route path="/privacy-policy">
-            <PrivacyPolicy />
-          </Route>
-          <Route path="/terms-of-service">
-            <TermsOfService />
-          </Route>
-          <Route path="/sign-in-success-email">
-            <SignInSuccessEmail />
-          </Route>
-          <Route path="/sign-in-with-email">
-            <SignInWithEmail />
-          </Route>
-          <Route path="/order-success">
-            <OrderSuccess />
-          </Route>
-          <Route path="/my-orders">
-            <MyOrders />
-          </Route>
-          <Route path="/favorites">
-            <Favorites />
-          </Route>
-          <Route path="/return-policy">
-            <ReturnPolicy />
-          </Route>
-        </Switch>
 
-        <div
-          id="firebaseui-auth-container"
-          style={{
-            zIndex: "86",
-            marginTop: "-.5em",
-            position: "relative",
-            bottom: "1.2em",
-          }}
-        ></div>
-        <div>
-          {termsDisplay && (
-            <div>
-              <PrivacyAndTermsAgreement />
-              {wishlistTempCache.length > 0 && (
-                <h4
-                  style={{
-                    position: "relative",
-                    // "background-color": "#565759",
-                    backgroundImage:
-                      "linear-gradient(to bottom right, #241d2b, black)",
-                    padding: ".25em",
-                    "border-radius": "13px",
-                    width: `${isLargeScreen ? "30%" : "90%"}`,
-                    left: `${isLargeScreen ? "35vw" : "5vw"}`,
-                  }}
-                  classsName="grayblock centered"
-                >
-                  Sign in to see your Favorites
-                </h4>
-              )}
-              <RecentlyViewed />
-            </div>
-          )}
-        </div>
-        <br></br>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+        <Route path="/checkout">
+          <ShippingComponent />
+        </Route>
+        <Route path="/express-checkout">
+          <Elements stripe={stripePromise}>
+            <ExpressCheckout />
+          </Elements>
+        </Route>
+        <Route exact path="/shop">
+          <Shop />
+        </Route>
+        <Route path="/shop/full-sets">
+          <FullSets />
+        </Route>
+        <Route path="/shop/tops">
+          <Tops />
+        </Route>
+        <Route path="/shop/skirts">
+          <Skirts />
+        </Route>
+        <Route path="/shop/belts">
+          <Belts />
+        </Route>
+        {allProducts.map((product) => {
+          let productPageLinkString = product[0].split(" ").join("-");
+          return (
+            <Route path={`/product/${productPageLinkString}`}>
+              <ProductPage item={product} />
+            </Route>
+          );
+        })}
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="cart-sign-in">
+          <CartSignIn />
+        </Route>
+        <Route path="/account">
+          <Account />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="/sign-in-successful">
+          <SignInSuccessful />
+        </Route>
+        <Route path="/privacy-policy">
+          <PrivacyPolicy />
+        </Route>
+        <Route path="/terms-of-service">
+          <TermsOfService />
+        </Route>
+        <Route path="/sign-in-success-email">
+          <SignInSuccessEmail />
+        </Route>
+        <Route path="/sign-in-with-email">
+          <SignInWithEmail />
+        </Route>
+        <Route path="/order-success">
+          <OrderSuccess />
+        </Route>
+        <Route path="/my-orders">
+          <MyOrders />
+        </Route>
+        <Route path="/favorites">
+          <Favorites />
+        </Route>
+        <Route path="/return-policy">
+          <ReturnPolicy />
+        </Route>
+      </Switch>
+
+      <div
+        id="firebaseui-auth-container"
+        style={{
+          zIndex: "86",
+          marginTop: "-.5em",
+          position: "relative",
+          bottom: "1.2em",
+        }}
+      ></div>
+      <div>
+        {termsDisplay && (
+          <div>
+            <PrivacyAndTermsAgreement />
+            {wishlistTempCache.length > 0 && (
+              <h4
+                style={{
+                  position: "relative",
+                  // "background-color": "#565759",
+                  backgroundImage:
+                    "linear-gradient(to bottom right, #241d2b, black)",
+                  padding: ".25em",
+                  "border-radius": "13px",
+                  width: `${isLargeScreen ? "30%" : "90%"}`,
+                  left: `${isLargeScreen ? "35vw" : "5vw"}`,
+                }}
+                classsName="grayblock centered"
+              >
+                Sign in to see your Favorites
+              </h4>
+            )}
+            <RecentlyViewed />
+          </div>
+        )}
       </div>
+      <br></br>
+      <Footer />
     </div>
   );
 }

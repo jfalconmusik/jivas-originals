@@ -18,23 +18,29 @@ body {
   /* font-family: "Merienda"; */
   font-weight: bold;
   font-family: "Luminari";
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
-/* .homeScreen {
-  position: relative;
+.homeScreen {
+  perspective: 1px;
+  height: 100vh;
+  width: 200vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* position: relative; */
   margin: 0 auto;
-  display: inline;
-} */
+  display: inline-block;
+  border-radius: 25px;
+  border: darkgrey;
+  border-style: dotted;
+  padding: 25px;
+}
 
 .backgroundElement {
   /* parallax element - background */
-  transform: translateZ(-1px) scale(3.3);
-  height: 200%;
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/pattern-big.jpg?alt=media&token=e71c2b94-9fda-4cd7-bfd5-c2eb727fb6d0");
+  transform: translateZ(-1px) scale(4);
+  height: 110%;
+
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fpattern-13.jpg?alt=media&token=32aebe9d-8cb0-44c6-842e-0ce50b0320d0");
   background-repeat: repeat;
 
   position: absolute;
@@ -45,6 +51,8 @@ body {
 }
 
 .baseElement {
+  margin-top: 100px;
+  margin-bottom: 100px;
   /* parallax element - foreground */
   transform: translateZ(0);
   /* -webkit-transform: translateZ(0);

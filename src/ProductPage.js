@@ -1024,7 +1024,6 @@ function ProductPage(props) {
             </li>
           </ul>
         </nav>
-        <Footer />
       </div>
     );
   } else {
@@ -1034,7 +1033,6 @@ function ProductPage(props) {
         <div class="text-center">
           <div class="spinner-border" role="status"></div>
         </div>
-        <Footer />
       </div>
     );
   }

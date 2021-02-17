@@ -2521,7 +2521,6 @@ function ShippingComponent() {
             </li>
           </ul>
         </nav>
-        <Footer />
       </div>
     );
   } else {

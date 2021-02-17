@@ -923,7 +923,6 @@ function Account() {
             </li>
           </ul>
         </nav>
-        <Footer />
       </div>
     );
   }

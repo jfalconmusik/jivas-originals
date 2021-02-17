@@ -325,7 +325,6 @@ function Cart() {
           </li>
         </ul>
       </nav>
-      <Footer />
     </div>
   );
 

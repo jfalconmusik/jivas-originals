@@ -329,7 +329,6 @@ function Shop() {
         <br></br>
       </div>
       <br></br>
-      <Footer />
     </div>
   );
 }
