@@ -2317,9 +2317,9 @@ function App() {
               <h4
                 style={{
                   position: "relative",
-                  // "background-color": "#565759",
-                  backgroundImage:
-                    "linear-gradient(to bottom right, #241d2b, black)",
+                  "background-color": "#565759",
+                  // backgroundImage:
+                  //   "linear-gradient(to bottom right, #241d2b, black)",
                   padding: ".25em",
                   "border-radius": "13px",
                   width: `${isLargeScreen ? "30%" : "90%"}`,

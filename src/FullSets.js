@@ -264,7 +264,7 @@ function FullSets() {
           }
         }
       >
-        <h2 style={{ "font-family": "Merienda" }}>Sets</h2>
+        <h2 style={{ "font-family": "Luminari" }}>Sets</h2>
         <br></br>
         {displayNumber && (
           <p
