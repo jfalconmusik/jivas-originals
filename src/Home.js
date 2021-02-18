@@ -473,7 +473,7 @@ function Home() {
                     height="auto"
                     src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20dress%20final%20white.svg?alt=media&token=9c6af742-7966-4490-a63b-c5e9b96887a5"
                   />
-                  <h4>Look Gorgeous</h4>
+                  <h4 style={{ fontFamily: "luminari" }}>Look Gorgeous</h4>
                   <p>Outfits to make any day special.</p>
                 </Flexbox>
               </Link>
@@ -491,7 +491,9 @@ function Home() {
                     height="auto"
                     src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20shop%20final%20white.svg?alt=media&token=f39ea99b-a259-4525-bca7-2b6861efe459"
                   />
-                  <h4>Support Small Business</h4>
+                  <h4 style={{ fontFamily: "luminari" }}>
+                    Support Small Business
+                  </h4>
                   <p>Clothing designed by artists from around the world.</p>
                 </Flexbox>
               </Link>
@@ -509,7 +511,7 @@ function Home() {
                     height="auto"
                     src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/h%20love%20final.svg?alt=media&token=e4c18e44-7cd7-4dc4-8c04-3819a05b326b"
                   />
-                  <h4>Give Back</h4>
+                  <h4 style={{ fontFamily: "luminari" }}>Give Back</h4>
                   <p>5% of sales go to charity</p>
                 </Flexbox>
               </Link>
@@ -560,7 +562,12 @@ function Home() {
                   />
                 </div>
                 <div class="media-object-section">
-                  <h4 onLoad={() => incrementHome()}>Our Story</h4>
+                  <h4
+                    onLoad={() => incrementHome()}
+                    style={{ fontFamily: "luminari" }}
+                  >
+                    Our Story
+                  </h4>
                   <p>
                     Jiva herself was a pioneer of modern traveling theatre,
                     performing many original plays at renaissance festivals
@@ -601,7 +608,7 @@ function Home() {
                 src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/294835_178973432170960_976701_n.jpg?alt=media&token=18a7fcd3-da83-4ba2-aaa6-e6bf19d1bb3c"
               />
               <div>
-                <h4>Our Story</h4>
+                <h4 style={{ fontFamily: "luminari" }}>Our Story</h4>
                 <p>
                   Jiva herself was a pioneer of modern traveling theatre,
                   performing many original plays at renaissance festivals around
@@ -635,7 +642,7 @@ function Home() {
                 zIndex: "94",
               }}
             >
-              <h2>Event Schedule</h2>
+              <h2 style={{ fontFamily: "luminari" }}>Event Schedule</h2>
               <p>
                 Wanna shop in person? Come find us at a renaissance faire near
                 you!
@@ -659,7 +666,7 @@ function Home() {
                 <div class="media-object-section" style={{ left: "2.5em" }}>
                   <h3>{`June & July`}:</h3>
                   <span style={{ position: "relative", left: "36px" }}>
-                    <p>
+                    <p style={{ fontFamily: "luminari" }}>
                       Colorado Renaissance Festival <br></br>
                       <a
                         href="https://coloradorenaissance.com/tickets/"
@@ -691,7 +698,7 @@ function Home() {
                 <div class="media-object-section">
                   <h3>{`August & September`}:</h3>
                   <span>
-                    <p>
+                    <p style={{ fontFamily: "luminari" }}>
                       Michigan Renaissance Festival <br></br>
                       <a
                         className="rounded"
@@ -723,7 +730,7 @@ function Home() {
                 <div class="media-object-section">
                   <h3>{`October & November`}:</h3>
                   <span>
-                    <p>
+                    <p style={{ fontFamily: "luminari" }}>
                       Texas Renaissance Festival <br></br>
                       <a
                         className="rounded"
@@ -774,7 +781,7 @@ function Home() {
                   <div>
                     <h3>{`June & July`}:</h3>
                     <span>
-                      <p>
+                      <p style={{ fontFamily: "luminari" }}>
                         Colorado Renaissance Festival <br></br>
                         <a
                           className="rounded"
@@ -807,7 +814,7 @@ function Home() {
                   <div>
                     <h3>{`August & September`}:</h3>
                     <span>
-                      <p>
+                      <p style={{ fontFamily: "luminari" }}>
                         Michigan Renaissance Festival <br></br>
                         <a
                           className="rounded"
@@ -840,7 +847,7 @@ function Home() {
                   <div>
                     <h3>{`October & November`}:</h3>
                     <span>
-                      <p>
+                      <p style={{ fontFamily: "luminari" }}>
                         Texas Renaissance Festival <br></br>
                         <a
                           className="rounded"
@@ -876,7 +883,11 @@ function Home() {
                   <button
                     type="button"
                     className="button primary centered glowButton"
-                    style={{ width: "200px", marginTop: "1em" }}
+                    style={{
+                      width: "200px",
+                      marginTop: "1em",
+                      fontFamily: "Luminari",
+                    }}
                   >
                     Shop Now
                   </button>
@@ -905,7 +916,7 @@ function Home() {
             <button
               type="button"
               className="button primary centered glowButton"
-              style={{ width: "150px" }}
+              style={{ fontFamily: "luminari", width: "150px" }}
             >
               Shop Now
             </button>
@@ -931,7 +942,7 @@ function Home() {
                         height="auto"
                         src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20dress%20final%20white.svg?alt=media&token=9c6af742-7966-4490-a63b-c5e9b96887a5"
                       />
-                      <h4>Look Gorgeous</h4>
+                      <h4 style={{ fontFamily: "luminari" }}>Look Gorgeous</h4>
                       <p>Outfits to make any day special.</p>
                     </Flexbox>
                   </Link>
@@ -949,7 +960,9 @@ function Home() {
                         height="auto"
                         src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/hp%20shop%20final%20white.svg?alt=media&token=f39ea99b-a259-4525-bca7-2b6861efe459"
                       />
-                      <h4>Support Small Business</h4>
+                      <h4 style={{ fontFamily: "luminari" }}>
+                        Support Small Business
+                      </h4>
                       <p>Clothing designed by artists from around the world.</p>
                     </Flexbox>
                   </Link>
@@ -967,7 +980,7 @@ function Home() {
                         height="auto"
                         src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/h%20love%20final.svg?alt=media&token=e4c18e44-7cd7-4dc4-8c04-3819a05b326b"
                       />
-                      <h4>Give Back</h4>
+                      <h4 style={{ fontFamily: "luminari" }}>Give Back</h4>
                       <p>5% of sales go to charity</p>
                     </Flexbox>
                   </Link>
