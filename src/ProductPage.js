@@ -428,12 +428,18 @@ function ProductPage(props) {
   const [hasCategory, setHasCategory] = useState(true);
 
   useEffect(() => {
-    if (item[8] == "Top") {
-      setItemCategory("tops");
+    if (item[8] == "Shirt") {
+      setItemCategory("shirts");
     } else if (item[8] == "Belt") {
       setItemCategory("belts");
+    } else if (item[8] == "Cloak") {
+      setItemCategory("cloaks");
+    } else if (item[8] == "Coat") {
+      setItemCategory("coats");
     } else if (item[8] == "Skirt") {
       setItemCategory("skirts");
+    } else if (item[8] == "Pants") {
+      setItemCategory("pants");
     } else if (item[8] == "Full Set") {
       setItemCategory("full-sets");
     } else {

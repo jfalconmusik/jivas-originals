@@ -617,22 +617,16 @@ function ContextProvider({ children }) {
   }, []);
 
   const [beltCategory, setBeltCategory] = useState([]);
-  const [shirtCategory, setShirtCategory] = useState([]);
-  const [coatCategory, setCoatCategory] = useState([]);
-  const [cloakCategory, setCloakCategory] = useState([]);
+  const [topCategory, setTopCategory] = useState([]);
   const [skirtCategory, setSkirtCategory] = useState([]);
-  const [pantsCategory, setPantsCategory] = useState([]);
   const [fullSetCategory, setFullSetCategory] = useState([]);
 
   useEffect(() => {
     if (productsLoaded) {
       let beltsArray = [];
       let fullSetsArr = [];
-      let shirtsArray = [];
-      let cloaksArray = [];
-      let coatsArray = [];
+      let topsArray = [];
       let skirtsArray = [];
-      let pantsArray = [];
 
       allProducts.forEach((item) => {
         console.log(item);
@@ -643,37 +637,22 @@ function ContextProvider({ children }) {
         if (item[8].includes("Full Set")) {
           fullSetsArr.push(item);
         }
-        if (item[8].includes("Shirt")) {
-          shirtsArray.push(item);
-        }
-        if (item[8].includes("Coat")) {
-          coatsArray.push(item);
-        }
-        if (item[8].includes("Cloak")) {
-          cloaksArray.push(item);
+        if (item[8].includes("Top")) {
+          topsArray.push(item);
         }
         if (item[8].includes("Skirt")) {
           skirtsArray.push(item);
         }
-        if (item[8].includes("Pants")) {
-          pantsArray.push(item);
-        }
       });
 
       console.log(beltsArray);
-      console.log(shirtsArray);
-      console.log(cloaksArray);
-      console.log(coatsArray);
+      console.log(topsArray);
       console.log(skirtsArray);
-      console.log(pantsArray);
       console.log(fullSetsArr);
 
       setBeltCategory([...beltsArray]);
-      setShirtCategory([...shirtsArray]);
-      setCloakCategory([...cloaksArray]);
-      setCoatCategory([...coatsArray]);
+      setTopCategory([...topsArray]);
       setSkirtCategory([...skirtsArray]);
-      setPantsCategory([...pantsArray]);
       setFullSetCategory([...fullSetsArr]);
     }
   }, [productsLoaded]);
@@ -1987,7 +1966,7 @@ function ContextProvider({ children }) {
 
         beltCategory,
         skirtCategory,
-
+        topCategory,
         fullSetCategory,
 
         activateAddToCartModal,
@@ -2173,11 +2152,6 @@ function ContextProvider({ children }) {
 
         onHomeScreen,
         setOnHomeScreen,
-
-        shirtCategory,
-        coatCategory,
-        cloakCategory,
-        pantsCategory,
       }}
     >
       {children}

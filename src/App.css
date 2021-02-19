@@ -1482,3 +1482,11 @@ input {
 .modalMenu > button {
   width: fit-content;
 } */
+
+.pinkText {
+  color: white;
+  transition: color 1s;
+}
+.pinkText:hover {
+  color: #ff0051;
+}

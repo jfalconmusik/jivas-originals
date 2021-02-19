@@ -42,6 +42,7 @@
     "react-cool-portal": "^1.0.11",
     "react-country-region-selector": "^2.1.0",
     "react-dom": "^16.13.1",
+    "react-drilldown-menu": "^1.2.0",
     "react-dropdown": "^1.7.0",
     "react-flexbox-grid": "^2.1.2",
     "react-focus-lock": "^2.4.1",

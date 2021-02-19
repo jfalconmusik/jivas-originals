@@ -11,9 +11,13 @@ import firebase from "firebase";
 import { Context } from "./Context";
 import AllProducts from "./AllProducts";
 import FullSets from "./FullSets";
-import Tops from "./Tops";
+import Shirts from "./Shirts";
+import Cloaks from "./Cloaks";
+import Coats from "./Coats";
 import Skirts from "./Skirts";
+import Pants from "./Pants";
 import Belts from "./Belts";
+
 import Flexbox from "flexbox-react";
 import ContentLoader, { Facebook } from "react-content-loader";
 import RecentlyViewed from "./RecentlyViewed";
@@ -314,14 +318,23 @@ function Shop() {
               <Route path="/shop/full-sets">
                 <FullSets />
               </Route>
-              <Route path="/shop/tops">
-                <Tops />
+              <Route path="/shop/shirts">
+                <Shirts />
+              </Route>
+              <Route path="/shop/coats">
+                <Coats />
+              </Route>
+              <Route path="/shop/cloaks">
+                <Cloaks />
               </Route>
               <Route path="/shop/skirts">
                 <Skirts />
               </Route>
               <Route path="/shop/belts">
                 <Belts />
+              </Route>
+              <Route path="/shop/pants">
+                <Pants />
               </Route>
             </Switch>
           </div>

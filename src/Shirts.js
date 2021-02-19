@@ -9,7 +9,7 @@ import RecentlyViewed from "./RecentlyViewed";
 import PreloadImage from "react-preload-image";
 // import { Lines } from "react-preloaders"
 
-function Tops() {
+function Shirts() {
   const {
     wishlistItems,
     setWishlistItems,
@@ -25,7 +25,7 @@ function Tops() {
     itemList,
     productPageComponent,
     setProductPageComponent,
-    topCategory,
+    shirtCategory,
     activateAddToWishlistModal,
     productOnPageCount,
     setProductOnPageCount,
@@ -46,7 +46,7 @@ function Tops() {
     setOnCheckout(false);
     setOnProductPage(false);
     document.getElementById("firebaseui-auth-container").style.display = "none";
-    setCategorySearch("top");
+    setCategorySearch("shirt");
     // document.getElementById('smallSearch').style.display = "inline-block"
     // document.getElementById('largeSearch').style.display = "initial"
   }, []);
@@ -57,14 +57,14 @@ function Tops() {
     console.log(productPageComponent);
   }
 
-  const [tops, setTops] = useState([]);
+  const [shirts, setShirts] = useState([]);
 
   useEffect(() => {
-    const topNames = topCategory.map((item) => {
+    const shirtNames = shirtCategory.map((item) => {
       return item[0];
     });
-    setTops(topNames);
-  }, [topCategory]);
+    setShirts(shirtNames);
+  }, [shirtCategory]);
 
   /////////////////////////////////////////////////////////////////
   // <   AutoComplete Code Section >
@@ -241,10 +241,10 @@ function Tops() {
             <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <Link to="/shop/tops">Tops</Link>
+            <Link to="/shop/shirts">Shirts</Link>
           </li>
           <li>
-            <span class="show-for-sr">Current: Tops</span>
+            <span class="show-for-sr">Current: Shirts</span>
           </li>
         </ul>
       </nav>
@@ -257,7 +257,7 @@ function Tops() {
           }
         }
       >
-        <h2 style={{ fontFamily: "Luminari" }}>Tops</h2>
+        <h2 style={{ fontFamily: "Luminari" }}>Shirts</h2>
         <br></br>
         {displayNumber && (
           <p
@@ -275,7 +275,7 @@ function Tops() {
             {allNumber > 0 && allNumber} {itemString}
           </p>
         )}
-        {topCategory.map((item) => {
+        {shirtCategory.map((item) => {
           let refString = item[1].toString();
           console.log(item);
           console.log(item[0]);
@@ -305,7 +305,7 @@ function Tops() {
                 <div class="img-responsive">
                   <div
                     className="paisley"
-                    id={`contentLoader${tops.indexOf(item[0])}`}
+                    id={`contentLoader${shirts.indexOf(item[0])}`}
                     style={{ position: "absolute" }}
                   >
                     <ContentLoader
@@ -371,7 +371,7 @@ function Tops() {
                         left: `${!isSmallScreen ? "4.5vw" : "15vw"}`,
                       }}
                       className="loader centered"
-                      id={`spinner${tops.indexOf(item[0])}`}
+                      id={`spinner${shirts.indexOf(item[0])}`}
                     ></div>
                   </div>
                   <div
@@ -453,12 +453,12 @@ function Tops() {
                               .getBoundingClientRect()
                           );
                           document.getElementById(
-                            `contentLoader${tops.indexOf(item[0])}`
+                            `contentLoader${shirts.indexOf(item[0])}`
                           ).style.display = "none";
 
                           document
                             .getElementById(
-                              `contentLoader${tops.indexOf(item[0])}`
+                              `contentLoader${shirts.indexOf(item[0])}`
                             )
                             .setAttribute("display", "none");
                           document.getElementById(
@@ -544,4 +544,4 @@ function Tops() {
   );
 }
 
-export default Tops;
+export default Shirts;

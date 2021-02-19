@@ -5,7 +5,8 @@ import Foundation, { Menu, TopBar, Accordion } from "react-foundation";
 // import NavBar from "./components/navbar";
 import "./App.css";
 import Header from "./Header";
-import { Link, Switch, Route } from "react-router-dom";
+import { Link, Switch, Route, useHistory, useLocation } from "react-router-dom";
+import { ReactDrilldownMenu } from "react-drilldown-menu";
 import Cart from "./Cart";
 import CartSignIn from "./CartSignIn";
 import About from "./About";
@@ -33,8 +34,11 @@ import ReactModal from "react-modal";
 import MultiSelect from "react-multi-select-component";
 import usePortal from "react-cool-portal";
 import FullSets from "./FullSets";
-import Tops from "./Tops";
+import Shirts from "./Shirts";
 import Skirts from "./Skirts";
+import Coats from "./Coats";
+import Cloaks from "./Cloaks";
+import Pants from "./Pants";
 import Belts from "./Belts";
 import ExpressCheckout from "./ExpressCheckout";
 import Blog from "./Blog";
@@ -82,7 +86,10 @@ function App() {
     wishlistTempCache,
     categorySearch,
     setCategorySearch,
-    topCategory,
+    shirtCategory,
+    pantsCategory,
+    coatCategory,
+    cloakCategory,
     beltCategory,
     fullSetCategory,
     productsLoaded,
@@ -112,6 +119,13 @@ function App() {
     isBigScreen,
     onHomeScreen,
   } = useContext(Context);
+
+  const location = useLocation();
+  const history = useHistory();
+
+  const handleLeafNodeClick = (newPath) => {
+    history.push(newPath);
+  };
 
   const [selected, setSelected] = useState([]);
 
@@ -644,18 +658,42 @@ function App() {
   // </  AutoComplete Code Section >
   /////////////////////////////////////////////////////////
 
-  const [tops, setTops] = useState([]);
+  const [shirts, setShirts] = useState([]);
+  const [coats, setCoats] = useState([]);
+  const [cloaks, setCloaks] = useState([]);
+  const [pants, setPants] = useState([]);
   const [belts, setBelts] = useState([]);
   const [sets, setSets] = useState([]);
   const [skirts, setSkirts] = useState([]);
   const [productsArray, setProductsArray] = useState([]);
 
   useEffect(() => {
-    const topNames = topCategory.map((item) => {
+    const shirtNames = shirtCategory.map((item) => {
       return item[0];
     });
-    setTops(topNames);
-  }, [topCategory]);
+    setShirts(shirtNames);
+  }, [shirtCategory]);
+
+  useEffect(() => {
+    const coatNames = coatCategory.map((item) => {
+      return item[0];
+    });
+    setCoats(coatNames);
+  }, [coatCategory]);
+
+  useEffect(() => {
+    const cloakNames = cloakCategory.map((item) => {
+      return item[0];
+    });
+    setCloaks(cloakNames);
+  }, [cloakCategory]);
+
+  useEffect(() => {
+    const pantsNames = pantsCategory.map((item) => {
+      return item[0];
+    });
+    setPants(pantsNames);
+  }, [pantsCategory]);
 
   useEffect(() => {
     const beltNames = beltCategory.map((item) => {
@@ -697,10 +735,22 @@ function App() {
       setSearchArray(skirts);
       setSearchClass("skirts");
       setSearchString("Skirts");
-    } else if (categorySearch == "top") {
-      setSearchArray(tops);
-      setSearchClass("tops");
-      setSearchString("Tops");
+    } else if (categorySearch == "shirt") {
+      setSearchArray(shirts);
+      setSearchClass("shirts");
+      setSearchString("Shirts");
+    } else if (categorySearch == "coat") {
+      setSearchArray(coats);
+      setSearchClass("coats");
+      setSearchString("Coats");
+    } else if (categorySearch == "cloak") {
+      setSearchArray(cloaks);
+      setSearchClass("cloaks");
+      setSearchString("Cloaks");
+    } else if (categorySearch == "pants") {
+      setSearchArray(pants);
+      setSearchClass("pants");
+      setSearchString("Pants");
     } else if (categorySearch == "fullSet") {
       setSearchArray(sets);
       setSearchClass("fullSets");
@@ -1018,6 +1068,12 @@ function App() {
     );
   }
 
+  const [widescreenTopsMenu, setWidescreenTopsMenu] = useState(false);
+  const [widescreenBottomsMenu, setWidescreenBottomsMenu] = useState(false);
+
+  const [mobileTopsMenu, setMobileTopsMenu] = useState(false);
+  const [mobileBottomsMenu, setMobileBottomsMenu] = useState(false);
+
   useOnClickOutside(menuHomeRef, () => setShowMenuHome(false));
   useOnClickOutside(menuShopRef, () => setShowMenuShop(false));
   useOnClickOutside(menuAccountRef, () => setShowMenuAccount(false));
@@ -1059,110 +1115,336 @@ function App() {
           zIndex: "99",
           justifyContent: "space-evenly",
           flexDirection: "column",
-          left: "200px",
+          left: "230px",
           top: "53px",
-          height: "202px",
+          height: "160px",
           // marginleft: "5px",
-          width: "175px",
+          width: "210px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            flexDirection: "column",
-            height: "200px",
-            bottom: "30px",
-            position: "relative",
-            right: "7px",
-          }}
-        >
-          <div>
-            <Link className="smallText" to="/shop">
-              <button
-                type="button"
-                className="button primary small"
-                onClick={() => setShowMenuShop(false)}
-                style={{
-                  marginTop: "10px",
-                  marginBottom: "10px",
-                  top: "5px",
-                  bottom: "5px",
-                }}
+        {!widescreenBottomsMenu && !widescreenTopsMenu && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "column",
+              height: "300px",
+              // bottom: "30px",
+              position: "relative",
+              left: "3px",
+              // right: "7px",
+            }}
+          >
+            <button
+              type="button"
+              className="button primary small"
+              onClick={() => setShowMenuShop(false)}
+              style={{
+                // top: "5px",
+                bottom: "5px",
+                maxHeight: "35px",
+                width: "120px",
+              }}
+            >
+              <Link
+                className="smallText"
+                to="/shop"
+                style={{ color: "white", position: "relative", bottom: "10px" }}
               >
                 All
-              </button>
-            </Link>
-          </div>
-          <div>
-            <Link className="smallText" to="/shop/full-sets">
-              <button
-                type="button"
-                className="button primary small"
-                onClick={() => setShowMenuShop(false)}
+              </Link>
+            </button>
+            <button
+              type="button"
+              className="button primary small"
+              onClick={() => setShowMenuShop(false)}
+              style={{
+                // top: "5px",
+                bottom: "5px",
+                maxHeight: "35px",
+                width: "120px",
+              }}
+            >
+              <Link
+                className="smallText"
                 style={{
-                  marginTop: "10px",
-                  marginBottom: "10px",
-                  top: "5px",
-                  bottom: "5px",
+                  color: "white",
+                  bottom: "10px",
+                  position: "relative",
                 }}
+                to="/shop/full-sets"
               >
                 Sets
-              </button>
-            </Link>
+              </Link>
+            </button>
+
+            <button
+              type="button"
+              className="button primary small"
+              onClick={() => setWidescreenTopsMenu(true)}
+              style={{
+                top: "5px",
+                bottom: "5px",
+                maxHeight: "35px",
+                width: "120px",
+              }}
+            >
+              {"Tops >"}
+            </button>
+            <button
+              type="button"
+              className="button primary small"
+              onClick={() => setWidescreenBottomsMenu(true)}
+              style={{
+                top: "5px",
+                bottom: "5px",
+                maxHeight: "35px",
+                width: "120px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {"Bottoms >"}
+            </button>
           </div>
-          <div>
-            <Link className="smallText" to="/shop/tops">
+        )}
+        {widescreenBottomsMenu && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "row",
+              height: "180px",
+
+              position: "relative",
+              right: "11px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                flexDirection: "column",
+                height: "120px",
+                position: "relative",
+              }}
+            >
               <button
                 type="button"
                 className="button primary small"
-                onClick={() => setShowMenuShop(false)}
+                onClick={() => {
+                  setShowMenuShop(false);
+                  setWidescreenBottomsMenu(false);
+                }}
                 style={{
-                  marginTop: "10px",
-                  marginBottom: "10px",
-                  top: "5px",
                   bottom: "5px",
+                  maxHeight: "35px",
+                  width: "120px",
                 }}
               >
-                Tops
+                <Link
+                  className="smallText"
+                  to="/shop/skirts"
+                  style={{
+                    color: "white",
+                    bottom: "10px",
+                    position: "relative",
+                    right: "7px",
+                  }}
+                >
+                  Skirts
+                </Link>
               </button>
-            </Link>
-          </div>
-          <div>
-            <Link className="smallText" to="/shop/skirts">
               <button
                 type="button"
                 className="button primary small"
-                onClick={() => setShowMenuShop(false)}
+                onClick={() => {
+                  setShowMenuShop(false);
+                  setWidescreenBottomsMenu(false);
+                }}
                 style={{
-                  marginTop: "10px",
-                  marginBottom: "10px",
-                  top: "5px",
                   bottom: "5px",
+                  maxHeight: "35px",
+                  width: "120px",
                 }}
               >
-                Skirts
+                <Link
+                  className="smallText"
+                  to="/shop/pants"
+                  style={{
+                    color: "white",
+                    bottom: "10px",
+                    position: "relative",
+                    right: "7px",
+                  }}
+                >
+                  Pants
+                </Link>
               </button>
-            </Link>
-          </div>
-          <div>
-            <Link className="smallText" to="/shop/belts">
               <button
                 type="button"
                 className="button primary small"
-                onClick={() => setShowMenuShop(false)}
+                onClick={() => {
+                  setShowMenuShop(false);
+                  setWidescreenBottomsMenu(false);
+                }}
                 style={{
-                  marginTop: "10px",
-                  marginBottom: "10px",
-                  top: "5px",
                   bottom: "5px",
+                  maxHeight: "35px",
+                  width: "120px",
                 }}
               >
-                Belts
+                <Link
+                  className="smallText"
+                  to="/shop/belts"
+                  style={{
+                    color: "white",
+                    bottom: "10px",
+                    position: "relative",
+                    right: "7px",
+                  }}
+                >
+                  Belts
+                </Link>
               </button>
-            </Link>
+            </div>
+            <button
+              type="button"
+              className="shadowed pinkText"
+              style={{
+                height: "25px",
+                top: "10px",
+                position: "relative",
+                backgroundColor: "none",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                borderRadius: "25px",
+                left: "15px",
+                fontSize: "small",
+              }}
+              onClick={() => setWidescreenBottomsMenu(false)}
+            >
+              {"< Back"}
+            </button>
           </div>
-        </div>
+        )}
+        {widescreenTopsMenu && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "row",
+              height: "180px",
+              left: "5px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                flexDirection: "column",
+                height: "120px",
+                position: "relative",
+                right: "11px",
+              }}
+            >
+              <button
+                type="button"
+                className="button primary small"
+                onClick={() => {
+                  setShowMenuShop(false);
+                  setWidescreenTopsMenu(false);
+                }}
+                style={{
+                  bottom: "5px",
+                  maxHeight: "35px",
+                  width: "120px",
+                }}
+              >
+                <Link
+                  className="smallText"
+                  to="/shop/shirts"
+                  style={{
+                    color: "white",
+                    bottom: "10px",
+                    position: "relative",
+                    right: "7px",
+                  }}
+                >
+                  Shirts
+                </Link>
+              </button>
+              <button
+                type="button"
+                className="button primary small"
+                onClick={() => {
+                  setShowMenuShop(false);
+                  setWidescreenTopsMenu(false);
+                }}
+                style={{
+                  bottom: "5px",
+                  maxHeight: "35px",
+                  width: "120px",
+                }}
+              >
+                <Link
+                  className="smallText"
+                  to="/shop/coats"
+                  style={{
+                    color: "white",
+                    bottom: "10px",
+                    position: "relative",
+                    right: "7px",
+                  }}
+                >
+                  Coats
+                </Link>
+              </button>
+              <button
+                type="button"
+                className="button primary small"
+                onClick={() => {
+                  setShowMenuShop(false);
+                  setWidescreenTopsMenu(false);
+                }}
+                style={{
+                  bottom: "5px",
+                  maxHeight: "35px",
+                  width: "120px",
+                }}
+              >
+                <Link
+                  className="smallText"
+                  to="/shop/cloaks"
+                  style={{
+                    color: "white",
+                    bottom: "10px",
+                    position: "relative",
+                    right: "7px",
+                  }}
+                >
+                  Cloaks
+                </Link>
+              </button>
+            </div>
+            <button
+              type="button"
+              className="shadowed pinkText"
+              style={{
+                height: "25px",
+                top: "10px",
+                position: "relative",
+                backgroundColor: "none",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                borderRadius: "25px",
+                fontSize: "small",
+              }}
+              onClick={() => setWidescreenTopsMenu(false)}
+            >
+              {"< Back"}
+            </button>
+          </div>
+        )}
       </div>
     );
   }
@@ -1182,8 +1464,9 @@ function App() {
           }`,
           justifyContent: "space-around",
           flexDirection: "column",
-          top: "53px",
+          top: "54px",
           width: "170px",
+          left: "35px",
         }}
       >
         <div>
@@ -1192,7 +1475,12 @@ function App() {
               type="button"
               className="button primary small"
               onClick={() => setShowMenuHome(false)}
-              style={{ left: "3em", float: "left", margin: "2px" }}
+              style={{
+                left: "3em",
+                float: "left",
+                margin: "2px",
+                width: "120px",
+              }}
             >
               Home
             </button>
@@ -1204,7 +1492,12 @@ function App() {
               type="button"
               className="button primary small"
               onClick={() => setShowMenuHome(false)}
-              style={{ left: "3em", float: "left", margin: "2px" }}
+              style={{
+                left: "3em",
+                float: "left",
+                margin: "2px",
+                width: "120px",
+              }}
             >
               Privacy Policy
             </button>
@@ -1216,7 +1509,12 @@ function App() {
               type="button"
               className="button primary small"
               onClick={() => setShowMenuHome(false)}
-              style={{ left: "3em", float: "left", margin: "2px" }}
+              style={{
+                left: "3em",
+                float: "left",
+                margin: "2px",
+                width: "120px",
+              }}
             >
               Terms of Service
             </button>
@@ -1228,7 +1526,12 @@ function App() {
               type="button"
               className="button primary small"
               onClick={() => setShowMenuHome(false)}
-              style={{ left: "3em", float: "left", margin: "2px" }}
+              style={{
+                left: "3em",
+                float: "left",
+                margin: "2px",
+                width: "120px",
+              }}
             >
               Contact Us
             </button>
@@ -1875,14 +2178,19 @@ function App() {
                   to="/"
                   onClick={() => handleSidebar()}
                 >
-                  <button type="button" className="button success hollow small">
+                  <button
+                    type="button"
+                    className="button success small"
+                    style={{ width: "100px" }}
+                  >
                     Home
                   </button>
                 </Link>
                 <Link className="largeText smushed" to="/contact">
                   <button
+                    style={{ width: "100px" }}
                     type="button"
-                    className="button primary hollow small"
+                    className="button primary small"
                     onClick={() => {
                       handleSidebar();
                     }}
@@ -1891,73 +2199,227 @@ function App() {
                   </button>
                 </Link>
                 <br></br>
-                <Link
-                  className="largeText smushed"
-                  to="/shop"
-                  onClick={() => {
-                    handleSidebar();
-                  }}
-                >
-                  <button type="button" className="button success hollow small">
-                    Shop All
-                  </button>
-                </Link>
-                <Link
-                  className="largeText smushed"
-                  to="/shop/full-sets"
-                  onClick={() => {
-                    handleSidebar();
-                  }}
-                >
-                  <button
-                    type="button"
-                    className="button primary hollow small"
-                    onClick={() => {
-                      handleSidebar();
-                    }}
-                  >
-                    Sets
-                  </button>
-                </Link>
-                <Link
-                  className="largeText smushed"
-                  to="/shop/tops"
-                  onClick={() => {
-                    handleSidebar();
-                  }}
-                >
-                  <button type="button" className="button primary hollow small">
-                    Tops
-                  </button>
-                </Link>
-                <Link
-                  className="largeText smushed"
-                  to="/shop/skirts"
-                  onClick={() => {
-                    handleSidebar();
-                  }}
-                >
-                  <button type="button" className="button primary hollow small">
-                    Skirts
-                  </button>
-                </Link>
-                <Link
-                  className="largeText smushed"
-                  to="/shop/belts"
-                  onClick={() => {
-                    handleSidebar();
-                  }}
-                >
-                  <button
-                    type="button"
-                    className="button primary hollow small"
-                    onClick={() => {
-                      handleSidebar();
-                    }}
-                  >
-                    Belts
-                  </button>
-                </Link>
+                {!mobileBottomsMenu && !mobileTopsMenu && (
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <Link
+                      className="largeText smushed"
+                      to="/shop"
+                      onClick={() => {
+                        handleSidebar();
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="button success small"
+                        style={{ width: "100px" }}
+                      >
+                        Shop All
+                      </button>
+                    </Link>
+                    <Link
+                      className="largeText smushed"
+                      to="/shop/full-sets"
+                      onClick={() => {
+                        handleSidebar();
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="button primary small"
+                        style={{ width: "100px" }}
+                        onClick={() => {
+                          handleSidebar();
+                        }}
+                      >
+                        Sets
+                      </button>
+                    </Link>
+
+                    <button
+                      type="button"
+                      className="button primary small largeText smushed"
+                      onClick={() => {
+                        setMobileTopsMenu(true);
+                      }}
+                      style={{
+                        marginTop: "-5px",
+                        marginBottom: "3px",
+                        width: "100px",
+                      }}
+                    >
+                      {"Tops >"}
+                    </button>
+
+                    <button
+                      type="button"
+                      className="button primary small largeText smushed"
+                      onClick={() => setMobileBottomsMenu(true)}
+                      style={{ width: "100px" }}
+                    >
+                      {"Bottoms >"}
+                    </button>
+                  </div>
+                )}
+                {mobileTopsMenu && (
+                  <div>
+                    <button
+                      style={{
+                        bottom: "10px",
+                        right: "10px",
+                        position: "relative",
+                        display: "flex",
+                        flexDirection: "row",
+                      }}
+                      type="button"
+                      onClick={() => setMobileTopsMenu(false)}
+                    >
+                      <img
+                        alt="sidebar arrow"
+                        width="10em"
+                        style={{ top: "4px", position: "relative" }}
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/left%20arrow%20white.svg?alt=media&token=9f166f00-6ab3-4c6f-b889-64178ab8472a"
+                      />
+                      <p style={{ color: "white", fontSize: "small" }}>
+                        ⇦ Back
+                      </p>
+                    </button>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/shirts"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileTopsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{ width: "100px" }}
+                        >
+                          {"Shirts"}
+                        </button>
+                      </Link>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/coats"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileTopsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{ width: "100px" }}
+                        >
+                          {"Coats"}
+                        </button>
+                      </Link>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/cloaks"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileTopsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{ width: "100px" }}
+                          onClick={() => {
+                            handleSidebar();
+                            setMobileTopsMenu(false);
+                          }}
+                        >
+                          Cloaks
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+                {mobileBottomsMenu && (
+                  <div>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <button
+                        style={{
+                          bottom: "10px",
+                          right: "10px",
+                          position: "relative",
+                          display: "flex",
+                          flexDirection: "row",
+                        }}
+                        type="button"
+                        onClick={() => setMobileBottomsMenu(false)}
+                      >
+                        <img
+                          alt="sidebar arrow"
+                          width="10em"
+                          style={{ top: "4px", position: "relative" }}
+                          height="auto"
+                          src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/left%20arrow%20white.svg?alt=media&token=9f166f00-6ab3-4c6f-b889-64178ab8472a"
+                        />
+                        <p style={{ color: "white", fontSize: "small" }}>
+                          Back
+                        </p>
+                      </button>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/skirts"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileBottomsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{ width: "100px" }}
+                        >
+                          {"Skirts"}
+                        </button>
+                      </Link>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/pants"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileBottomsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{ width: "100px" }}
+                        >
+                          {"Pants"}
+                        </button>
+                      </Link>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/belts"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileBottomsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{ width: "100px" }}
+                          onClick={() => {
+                            handleSidebar();
+                            setMobileBottomsMenu(false);
+                          }}
+                        >
+                          Belts
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
                 <br></br>
                 {accountTitleString === "Your Account" ? (
                   <Link
@@ -1969,7 +2431,8 @@ function App() {
                   >
                     <button
                       type="button"
-                      className="button success hollow small"
+                      className="button success  small"
+                      style={{ width: "100px" }}
                     >
                       Sign In
                     </button>
@@ -1985,7 +2448,8 @@ function App() {
                     >
                       <button
                         type="button"
-                        className="button success hollow small"
+                        className="button success small"
+                        style={{ minWidth: "100px" }}
                       >
                         {accountTitleString}
                       </button>
@@ -1999,7 +2463,8 @@ function App() {
                     >
                       <button
                         type="button"
-                        className="button primary hollow small"
+                        className="button primary small"
+                        style={{ width: "100px" }}
                       >
                         Favorites
                       </button>
@@ -2014,7 +2479,8 @@ function App() {
                     >
                       <button
                         type="button"
-                        className="button primary hollow small"
+                        className="button primary small"
+                        style={{ width: "100px" }}
                       >
                         Cart
                       </button>
@@ -2028,7 +2494,8 @@ function App() {
                     >
                       <button
                         type="button"
-                        className="button primary hollow small"
+                        className="button primary small"
+                        style={{ width: "100px" }}
                       >
                         Orders
                       </button>
@@ -2043,7 +2510,8 @@ function App() {
                     >
                       <button
                         type="button"
-                        className="button primary hollow small"
+                        className="button primary small"
+                        style={{ width: "100px" }}
                       >
                         Sign Out
                       </button>
@@ -2239,11 +2707,20 @@ function App() {
         <Route path="/shop/full-sets">
           <FullSets />
         </Route>
-        <Route path="/shop/tops">
-          <Tops />
+        <Route path="/shop/shirts">
+          <Shirts />
         </Route>
         <Route path="/shop/skirts">
           <Skirts />
+        </Route>
+        <Route path="/shop/coats">
+          <Coats />
+        </Route>
+        <Route path="/shop/cloaks">
+          <Cloaks />
+        </Route>
+        <Route path="/shop/pants">
+          <Pants />
         </Route>
         <Route path="/shop/belts">
           <Belts />
