@@ -1790,7 +1790,11 @@ function App() {
             style={{ whiteSpace: "nowrap", maxWidth: "100vw" }}
             className="title-bar-title show-for-large"
           >
-            <Link to="/" onMouseOver={() => setShowMenuHome(true)}>
+            <Link
+              to="/"
+              onMouseOver={() => setShowMenuHome(true)}
+              style={{ height: "100px", width: "200px", zIndex: "99" }}
+            >
               <Flexbox flexDirection="row">
                 <img
                   alt="jiva logo rose"
@@ -1970,8 +1974,6 @@ function App() {
             }}
             data-dropdown-menu
           >
-            <li className="menu-text">{/* Jiva Fashions */}</li>
-
             <li
               style={{ right: "4em" }}
               onMouseOver={() => setShowMenuShop(true)}
@@ -2008,6 +2010,7 @@ function App() {
                 whiteSpace: "nowrap",
                 right: "300px",
                 bottom: ".6em",
+                pointerEvents: "none",
               }}
             >
               <span
@@ -2030,13 +2033,16 @@ function App() {
                       // right: "1.8em",
                       // float: "left",
                       visibility: `${listItemDisplay}`,
+                      pointerEvents: "all",
                     }}
                   >
                     <div
                       className="autocomplete"
                       style={{
                         // right: "15%",
-                        // bottom: "-15em",
+                        position: "relative",
+                        bottom: "0px",
+                        marginTop: "12px",
                         float: "left",
                       }}
                     >
@@ -2102,6 +2108,8 @@ function App() {
                     flexDirection: "column",
                     bottom: "13px",
                     left: "280px",
+                    marginTop: "9px",
+                    pointerEvents: "all",
                   }}
                 >
                   <Link to="/account" className="li row">
@@ -2118,6 +2126,8 @@ function App() {
                     bottom: "21px",
                     position: "relative",
                     left: "280px",
+                    marginTop: "7px",
+                    pointerEvents: "all",
                   }}
                 >
                   <img
