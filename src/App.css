@@ -148,6 +148,7 @@ background-image: url("https://firebasestorage.googleapis.com/v0/b/jiva-website-
   /* margin: -10px; */
   overflow: hidden;
   background-color: #333;
+  background-image: linear-gradient(rgb(88, 88, 88), rgb(29, 29, 29));
   list-style-type: none;
   color: white;
   width: 100%;
@@ -1392,7 +1393,7 @@ input {
   padding: 50px;
   margin: 0 auto;
   box-shadow: 0px 1px 3px 3px #6d96de;
-  background-image: linear-gradient(to bottom right, #cce0ff, #3a4885);
+  background-image: linear-gradient(to bottom right, #95a4bb, #355694);
   font-size: larger;
   text-shadow: 2px 2px black;
   color: white;
@@ -1489,4 +1490,27 @@ input {
 }
 .pinkText:hover {
   color: #ff0051;
+}
+
+@keyframes shimmer {
+  0% {
+    background-color: #dfdfdf;
+    box-shadow: 0 0 5px #dfe0e0;
+  }
+  50% {
+    background-color: #0c548f;
+    box-shadow: 0 0 100px #14518b;
+  }
+  100% {
+    background-color: #222222;
+    box-shadow: 0 0 5px #222222;
+  }
+}
+
+.shimmerText {
+  animation: none;
+}
+
+.shimmerText:hover {
+  animation: shimmer 2000ms infinite;
 }

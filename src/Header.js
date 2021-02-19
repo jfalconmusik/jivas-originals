@@ -200,7 +200,9 @@ function Header() {
               margin: "0 auto",
               bottom: `55px`,
               height: "150px",
-              width: "100vw",
+              width: `${isPortrait || isSmallScreen ? "200%" : "113%"}`,
+              right: `${isPortrait || isSmallScreen ? "20%" : ""}`,
+              justifyContent: "space-between",
               display: "flex",
               flexDirection: "row",
             }}
@@ -217,18 +219,55 @@ function Header() {
               alt="roses"
               src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/Corner%20Flower.png?alt=media&token=20612d0b-05d0-4da9-9086-197a80c8af2d"
             />
-            <img
+            <div
               style={{
-                height: "100px",
-                width: `${isPortrait || isSmallScreen ? "90vw" : "auto"}`,
-                right: `${isPortrait || isSmallScreen ? "20vw" : "5vw"}`,
-                position: "relative",
-                margin: "0 auto",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                width: "400px",
               }}
-              //   height="90px"
-              src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fheader%20background%20feb%202021%20luminari.png?alt=media&token=760b19ca-16e4-4e9a-9b76-4edb5043e110"
-              alt="Jiva's Originals Header"
-            />
+            >
+              <img
+                alt="vines"
+                style={{
+                  right: "40px",
+                  position: "relative",
+                  transform: "scaleX(-1)",
+                  float: "right",
+                  display: `${
+                    isPortrait || isSmallScreen ? "none" : "initial"
+                  }`,
+                }}
+                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fvine%20black.png?alt=media&token=d06a68e1-0677-46b2-8c0d-ffa9fe54c657"
+              />
+              <img
+                style={{
+                  height: "100px",
+                  width: `${isPortrait || isSmallScreen ? "150vw" : "auto"}`,
+                  right: `${isPortrait || isSmallScreen ? "" : "5vw"}`,
+                  position: "relative",
+                  margin: "0 auto",
+                  zIndex: "90",
+                }}
+                //   height="90px"
+                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fheader%20background%20feb%202021%20luminari.png?alt=media&token=760b19ca-16e4-4e9a-9b76-4edb5043e110"
+                alt="Jiva's Originals Header"
+              />
+              <img
+                style={{
+                  display: `${
+                    isPortrait || isSmallScreen ? "none" : "initial"
+                  }`,
+
+                  float: "left",
+                  right: "150px",
+                  zIndex: "89",
+                  position: "relative",
+                }}
+                alt="vines"
+                src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/svg%2Fvine%20black.png?alt=media&token=d06a68e1-0677-46b2-8c0d-ffa9fe54c657"
+              />
+            </div>
             <img
               height="100vw"
               width="100vw"

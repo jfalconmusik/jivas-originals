@@ -284,7 +284,7 @@ function Account() {
             height: `${isLargeScreen ? "auto" : "90em"}`,
           }}
         >
-          <h2>{accountTitleString}</h2>
+          <h2 style={{ fontFamily: "luminari" }}>{accountTitleString}</h2>
           <Flexbox
             flexDirection={isLargeScreen ? "row" : "column"}
             className="centered"
@@ -834,7 +834,7 @@ function Account() {
             </li>
           </ul>
         </nav>
-        <h1>Account</h1>
+        <h1 style={{ fontFamily: "luminari" }}>Account</h1>
         {/* <div className="shadowed centered" style={{
                     // "borderRadius": "25vw",
                     "position": "absolute",
@@ -865,7 +865,7 @@ function Account() {
   } else if (!userSignedIn || !firebase.auth().currentUser) {
     return (
       <div>
-        <h1>Account</h1>
+        <h1 style={{ fontFamily: "luminari" }}>Account</h1>
         <h2>Choose a sign-in method below:</h2>
         {/* <div className="shadowed centered" style={{
                     // "borderRadius": "25vw",

@@ -1557,9 +1557,9 @@ function App() {
           justifyContent: "space-evenly",
           flexDirection: "column",
           height: `${
-            accountTitleString !== "Your Account" ? "150px" : "100px"
+            accountTitleString !== "Your Account" ? "155px" : "100px"
           }`,
-          top: "38px",
+          top: "51px",
           width: "170px",
         }}
       >
@@ -1573,6 +1573,10 @@ function App() {
                   marginRight: "0em",
                   marginBottom: "1em",
                   marginTop: "1em",
+                  right: "10px",
+                  top: "8px",
+                  position: "relative",
+                  width: "120px",
                 }}
                 type="button"
                 className="button primary small"
@@ -1587,17 +1591,18 @@ function App() {
             style={{
               // display: `${toggleString}`,
               display: "flex",
-              justifyContent: "space-around",
+              justifyContent: "space-between",
               flexDirection: "column",
               bottom: "20px",
               position: "relative",
+              height: "140px",
+              right: "10px",
             }}
           >
             <div
               style={{
                 left: "1em",
                 float: "left",
-                margin: "2px",
               }}
             >
               <Link
@@ -1607,17 +1612,12 @@ function App() {
                   setWishlistDisplayed(true);
                   setWishlistString("Hide Favorites");
                 }}
-                style={{
-                  padding: ".5em",
-                  marginLeft: "7px",
-                  marginRight: "0em",
-                  marginBottom: "12px",
-                }}
               >
                 <button
                   onClick={() => setShowMenuAccount(false)}
                   type="button"
                   className="button primary small"
+                  style={{ width: "120px", height: "35px" }}
                 >
                   Favorites
                 </button>
@@ -1627,18 +1627,15 @@ function App() {
               style={{
                 left: "0em",
                 float: "left",
-                margin: "5px",
-                marginLeft: "1px",
-                marginBottom: "4px",
+
                 position: "relative",
               }}
             >
               <Link className="smallText" to="/cart">
                 <button
                   style={{
-                    padding: ".5em",
-                    marginLeft: "0em",
-                    marginRight: "0em",
+                    width: "120px",
+                    height: "35px",
                   }}
                   type="button"
                   className="button primary small"
@@ -1652,19 +1649,15 @@ function App() {
               style={{
                 left: "0em",
                 float: "left",
-                margin: "2px",
+
                 position: "relative",
-                // marginTop: "-2px",
-                marginLeft: "1px",
               }}
             >
               <Link className="smallText" to="/my-orders">
                 <button
                   style={{
-                    padding: ".5em",
-                    marginLeft: "0em",
-                    marginRight: "0em",
-                    marginBottom: "10px",
+                    width: "120px",
+                    height: "35px",
                   }}
                   type="button"
                   className="button primary small"
@@ -1678,8 +1671,7 @@ function App() {
               style={{
                 left: "0m",
                 float: "left",
-                margin: "4px",
-                marginLeft: "0px",
+
                 position: "relative",
               }}
             >
@@ -1693,9 +1685,8 @@ function App() {
               >
                 <button
                   style={{
-                    padding: ".5em",
-                    marginLeft: "0em",
-                    marginRight: "0em",
+                    width: "120px",
+                    height: "35px",
                   }}
                   type="button"
                   className="button primary small"

@@ -477,7 +477,7 @@ function Home() {
                   <p>Outfits to make any day special.</p>
                 </Flexbox>
               </Link>
-              <Link to="/shop" className="homeBox">
+              <Link to="/shop" className="homeBox ">
                 {/* eventually change this to lead elsewhere */}
                 <Flexbox
                   flexDirection="column"
@@ -929,13 +929,17 @@ function Home() {
                   className="centered"
                   flexDirection={`${isLargeScreen ? "row" : "column"}`}
                 >
-                  <Link to="/shop" className="homeBox">
+                  <Link to="/shop" className="homeBox shimmerText">
                     <Flexbox
                       flexDirection="column"
                       style={{ margin: "1em" }}
                       className="innerBox"
                     >
                       <img
+                        style={{
+                          backgroundColor: "black",
+                          borderRadius: "25px",
+                        }}
                         alt="dress icon"
                         className="centered thumbnail"
                         width="150em"
@@ -946,7 +950,7 @@ function Home() {
                       <p>Outfits to make any day special.</p>
                     </Flexbox>
                   </Link>
-                  <Link to="/shop" className="homeBox">
+                  <Link to="/shop" className="homeBox shimmerText">
                     {/* eventually change this to lead elsewhere */}
                     <Flexbox
                       flexDirection="column"
@@ -954,6 +958,10 @@ function Home() {
                       className="innerBox"
                     >
                       <img
+                        style={{
+                          backgroundColor: "black",
+                          borderRadius: "25px",
+                        }}
                         alt="business icon"
                         className="centered thumbnail"
                         width="150em"
@@ -966,14 +974,18 @@ function Home() {
                       <p>Clothing designed by artists from around the world.</p>
                     </Flexbox>
                   </Link>
-                  <Link to="/shop" className="homeBox">
+                  <Link to="/shop" className="homeBox shimmerText">
                     {/* eventually change this to lead elsewhere */}
                     <Flexbox
                       flexDirection="column"
                       style={{ margin: "1em" }}
-                      className="innerBox"
+                      className="innerBox shimmerText"
                     >
                       <img
+                        style={{
+                          backgroundColor: "black",
+                          borderRadius: "25px",
+                        }}
                         alt="charity icon"
                         className="centered thumbnail"
                         width="150em"

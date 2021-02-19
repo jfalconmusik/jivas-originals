@@ -33,6 +33,8 @@ function Cart() {
     setSearchString,
     setOnProductPage,
     setOnHomeScreen,
+    isPortrait,
+    isSmallScreen,
   } = useContext(Context);
 
   useEffect(() => {
@@ -109,16 +111,27 @@ function Cart() {
           Cart
         </h4>
         {itemList.length === 0 && (
-          <div className="centered rounded" style={{ minHeight: "30vh" }}>
+          <div
+            className="centered rounded"
+            style={{
+              minHeight: "30vh",
+            }}
+          >
             <div>
-              <div className="centered" style={{ top: "8em" }}>
+              <div
+                className="centered"
+                style={{
+                  position: "relative",
+                  top: `${!isPortrait || !isSmallScreen ? "100px" : ""}`,
+                }}
+              >
                 <p
                   className="centered"
                   style={{
                     "background-color": "#565759",
                     padding: ".25em",
                     "border-radius": "13px",
-                    width: `${isLargeScreen && "20%"}`,
+                    width: `fit-content`,
                     position: "relative",
                     whiteSpace: "nowrap",
                   }}
